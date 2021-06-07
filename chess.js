@@ -36,7 +36,7 @@ var wk1 = document.querySelector('.square-51');
 
 var div = document.querySelector(".banCo")
 var temp = true
-//Di chuyen chuot 1
+//Di chuyen chuot
 var wwp1 = 3
 wp1.onclick = function () {
     if (temp == true) {
@@ -211,7 +211,1225 @@ wp1.onclick = function () {
         temp = true;
     }
 }
-//Di chuyen xe 1
+var wwp2 = 3
+wp2.onclick = function () {
+    if (temp == true) {
+        wp2.style.backgroundColor = "#957373ad";
+        let nameClass = wp2.className.toString()
+        for (let i = 1; i < wwp2; i++) {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wp2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp2; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains("hover") == true) {
+                                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                div.removeChild(x);
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        temp = true;
+                        wp2.className = `piece wp square-${b}`
+                        wwp2 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    break;
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 11}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 11}`).className.toString()) == 1) {
+                    let cheophai = document.createElement("div")
+                    cheophai.classList.add("piece", "hover11", `square-${diachi(nameClass) + 11}`);
+                    cheophai.style.backgroundColor = "#ff000080";
+                    cheophai.onclick = function () {
+                        wp2.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover11`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp2; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) + 11
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp2.className = `piece wp square-${b}`
+                        wwp2 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheophai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 9}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 9}`).className.toString()) == 1) {
+                    let cheotrai = document.createElement("div")
+                    cheotrai.classList.add("piece", "hover9", `square-${diachi(nameClass) - 9}`);
+                    cheotrai.style.backgroundColor = "#ff000080";
+                    cheotrai.onclick = function () {
+                        wp2.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover9`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        for (let i = 1; i < wwp2; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) - 9
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp2.className = `piece wp square-${b}`
+                        wwp2 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheotrai)
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wp2.style.backgroundColor = "transparent";
+        let nameClass = wp2.className.toString();
+        for (let i = 1; i < wwp2; i++) {
+            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover');
+                if (kiemtra == 1) {
+                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                    div.removeChild(xoamau);
+                }
+            }
+
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+            if (phai != null) {
+                if (anduoc(phai.className.toString()) == 1) {
+                    let xoaphai = document.querySelector(`.hover11`);
+                    div.removeChild(xoaphai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+            if (trai != null) {
+                if (anduoc(trai.className.toString()) == 1) {
+                    let xoatrai = document.querySelector(`.hover9`);
+                    div.removeChild(xoatrai);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+var wwp3 = 3
+wp3.onclick = function () {
+    if (temp == true) {
+        wp3.style.backgroundColor = "#957373ad";
+        let nameClass = wp3.className.toString()
+        for (let i = 1; i < wwp3; i++) {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wp3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp3; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains("hover") == true) {
+                                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                div.removeChild(x);
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        temp = true;
+                        wp3.className = `piece wp square-${b}`
+                        wwp3 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    break;
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 11}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 11}`).className.toString()) == 1) {
+                    let cheophai = document.createElement("div")
+                    cheophai.classList.add("piece", "hover11", `square-${diachi(nameClass) + 11}`);
+                    cheophai.style.backgroundColor = "#ff000080";
+                    cheophai.onclick = function () {
+                        wp3.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover11`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp3; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) + 11
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp3.className = `piece wp square-${b}`
+                        wwp3 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheophai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 9}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 9}`).className.toString()) == 1) {
+                    let cheotrai = document.createElement("div")
+                    cheotrai.classList.add("piece", "hover9", `square-${diachi(nameClass) - 9}`);
+                    cheotrai.style.backgroundColor = "#ff000080";
+                    cheotrai.onclick = function () {
+                        wp3.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover9`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        for (let i = 1; i < wwp3; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) - 9
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp3.className = `piece wp square-${b}`
+                        wwp3 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheotrai)
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wp3.style.backgroundColor = "transparent";
+        let nameClass = wp3.className.toString();
+        for (let i = 1; i < wwp3; i++) {
+            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover');
+                if (kiemtra == 1) {
+                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                    div.removeChild(xoamau);
+                }
+            }
+
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+            if (phai != null) {
+                if (anduoc(phai.className.toString()) == 1) {
+                    let xoaphai = document.querySelector(`.hover11`);
+                    div.removeChild(xoaphai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+            if (trai != null) {
+                if (anduoc(trai.className.toString()) == 1) {
+                    let xoatrai = document.querySelector(`.hover9`);
+                    div.removeChild(xoatrai);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+var wwp4 = 3
+wp4.onclick = function () {
+    if (temp == true) {
+        wp4.style.backgroundColor = "#957373ad";
+        let nameClass = wp4.className.toString()
+        for (let i = 1; i < wwp4; i++) {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wp4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp4; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains("hover") == true) {
+                                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                div.removeChild(x);
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        temp = true;
+                        wp4.className = `piece wp square-${b}`
+                        wwp4 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    break;
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 11}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 11}`).className.toString()) == 1) {
+                    let cheophai = document.createElement("div")
+                    cheophai.classList.add("piece", "hover11", `square-${diachi(nameClass) + 11}`);
+                    cheophai.style.backgroundColor = "#ff000080";
+                    cheophai.onclick = function () {
+                        wp4.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover11`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp4; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) + 11
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp4.className = `piece wp square-${b}`
+                        wwp4 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheophai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 9}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 9}`).className.toString()) == 1) {
+                    let cheotrai = document.createElement("div")
+                    cheotrai.classList.add("piece", "hover9", `square-${diachi(nameClass) - 9}`);
+                    cheotrai.style.backgroundColor = "#ff000080";
+                    cheotrai.onclick = function () {
+                        wp4.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover9`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        for (let i = 1; i < wwp4; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) - 9
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp4.className = `piece wp square-${b}`
+                        wwp4 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheotrai)
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wp4.style.backgroundColor = "transparent";
+        let nameClass = wp4.className.toString();
+        for (let i = 1; i < wwp4; i++) {
+            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover');
+                if (kiemtra == 1) {
+                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                    div.removeChild(xoamau);
+                }
+            }
+
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+            if (phai != null) {
+                if (anduoc(phai.className.toString()) == 1) {
+                    let xoaphai = document.querySelector(`.hover11`);
+                    div.removeChild(xoaphai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+            if (trai != null) {
+                if (anduoc(trai.className.toString()) == 1) {
+                    let xoatrai = document.querySelector(`.hover9`);
+                    div.removeChild(xoatrai);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+var wwp5 = 3
+wp5.onclick = function () {
+    if (temp == true) {
+        wp5.style.backgroundColor = "#957373ad";
+        let nameClass = wp5.className.toString()
+        for (let i = 1; i < wwp5; i++) {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wp5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp5; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains("hover") == true) {
+                                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                div.removeChild(x);
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        temp = true;
+                        wp5.className = `piece wp square-${b}`
+                        wwp5 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    break;
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 11}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 11}`).className.toString()) == 1) {
+                    let cheophai = document.createElement("div")
+                    cheophai.classList.add("piece", "hover11", `square-${diachi(nameClass) + 11}`);
+                    cheophai.style.backgroundColor = "#ff000080";
+                    cheophai.onclick = function () {
+                        wp5.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover11`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp5; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) + 11
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp5.className = `piece wp square-${b}`
+                        wwp5 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheophai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 9}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 9}`).className.toString()) == 1) {
+                    let cheotrai = document.createElement("div")
+                    cheotrai.classList.add("piece", "hover9", `square-${diachi(nameClass) - 9}`);
+                    cheotrai.style.backgroundColor = "#ff000080";
+                    cheotrai.onclick = function () {
+                        wp5.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover9`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        for (let i = 1; i < wwp5; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) - 9
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp5.className = `piece wp square-${b}`
+                        wwp5 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheotrai)
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wp5.style.backgroundColor = "transparent";
+        let nameClass = wp5.className.toString();
+        for (let i = 1; i < wwp5; i++) {
+            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover');
+                if (kiemtra == 1) {
+                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                    div.removeChild(xoamau);
+                }
+            }
+
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+            if (phai != null) {
+                if (anduoc(phai.className.toString()) == 1) {
+                    let xoaphai = document.querySelector(`.hover11`);
+                    div.removeChild(xoaphai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+            if (trai != null) {
+                if (anduoc(trai.className.toString()) == 1) {
+                    let xoatrai = document.querySelector(`.hover9`);
+                    div.removeChild(xoatrai);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+var wwp6 = 3
+wp6.onclick = function () {
+    if (temp == true) {
+        wp6.style.backgroundColor = "#957373ad";
+        let nameClass = wp6.className.toString()
+        for (let i = 1; i < wwp6; i++) {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wp6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp6; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains("hover") == true) {
+                                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                div.removeChild(x);
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        temp = true;
+                        wp6.className = `piece wp square-${b}`
+                        wwp6 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    break;
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 11}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 11}`).className.toString()) == 1) {
+                    let cheophai = document.createElement("div")
+                    cheophai.classList.add("piece", "hover11", `square-${diachi(nameClass) + 11}`);
+                    cheophai.style.backgroundColor = "#ff000080";
+                    cheophai.onclick = function () {
+                        wp6.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover11`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp6; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) + 11
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp6.className = `piece wp square-${b}`
+                        wwp6 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheophai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 9}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 9}`).className.toString()) == 1) {
+                    let cheotrai = document.createElement("div")
+                    cheotrai.classList.add("piece", "hover9", `square-${diachi(nameClass) - 9}`);
+                    cheotrai.style.backgroundColor = "#ff000080";
+                    cheotrai.onclick = function () {
+                        wp6.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover9`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        for (let i = 1; i < wwp6; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) - 9
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp6.className = `piece wp square-${b}`
+                        wwp6 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheotrai)
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wp6.style.backgroundColor = "transparent";
+        let nameClass = wp6.className.toString();
+        for (let i = 1; i < wwp6; i++) {
+            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover');
+                if (kiemtra == 1) {
+                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                    div.removeChild(xoamau);
+                }
+            }
+
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+            if (phai != null) {
+                if (anduoc(phai.className.toString()) == 1) {
+                    let xoaphai = document.querySelector(`.hover11`);
+                    div.removeChild(xoaphai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+            if (trai != null) {
+                if (anduoc(trai.className.toString()) == 1) {
+                    let xoatrai = document.querySelector(`.hover9`);
+                    div.removeChild(xoatrai);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+var wwp7 = 3
+wp7.onclick = function () {
+    if (temp == true) {
+        wp7.style.backgroundColor = "#957373ad";
+        let nameClass = wp7.className.toString()
+        for (let i = 1; i < wwp7; i++) {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wp7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp7; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains("hover") == true) {
+                                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                div.removeChild(x);
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        temp = true;
+                        wp7.className = `piece wp square-${b}`
+                        wwp7 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    break;
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 11}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 11}`).className.toString()) == 1) {
+                    let cheophai = document.createElement("div")
+                    cheophai.classList.add("piece", "hover11", `square-${diachi(nameClass) + 11}`);
+                    cheophai.style.backgroundColor = "#ff000080";
+                    cheophai.onclick = function () {
+                        wp7.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover11`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp7; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) + 11
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp7.className = `piece wp square-${b}`
+                        wwp7 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheophai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 9}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 9}`).className.toString()) == 1) {
+                    let cheotrai = document.createElement("div")
+                    cheotrai.classList.add("piece", "hover9", `square-${diachi(nameClass) - 9}`);
+                    cheotrai.style.backgroundColor = "#ff000080";
+                    cheotrai.onclick = function () {
+                        wp7.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover9`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        for (let i = 1; i < wwp7; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) - 9
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp7.className = `piece wp square-${b}`
+                        wwp7 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheotrai)
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wp7.style.backgroundColor = "transparent";
+        let nameClass = wp7.className.toString();
+        for (let i = 1; i < wwp7; i++) {
+            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover');
+                if (kiemtra == 1) {
+                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                    div.removeChild(xoamau);
+                }
+            }
+
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+            if (phai != null) {
+                if (anduoc(phai.className.toString()) == 1) {
+                    let xoaphai = document.querySelector(`.hover11`);
+                    div.removeChild(xoaphai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+            if (trai != null) {
+                if (anduoc(trai.className.toString()) == 1) {
+                    let xoatrai = document.querySelector(`.hover9`);
+                    div.removeChild(xoatrai);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+var wwp8 = 3
+wp8.onclick = function () {
+    if (temp == true) {
+        wp8.style.backgroundColor = "#957373ad";
+        let nameClass = wp8.className.toString()
+        for (let i = 1; i < wwp8; i++) {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wp8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp8; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains("hover") == true) {
+                                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                div.removeChild(x);
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        temp = true;
+                        wp8.className = `piece wp square-${b}`
+                        wwp8 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    break;
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 11}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 11}`).className.toString()) == 1) {
+                    let cheophai = document.createElement("div")
+                    cheophai.classList.add("piece", "hover11", `square-${diachi(nameClass) + 11}`);
+                    cheophai.style.backgroundColor = "#ff000080";
+                    cheophai.onclick = function () {
+                        wp8.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover11`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        for (let i = 1; i < wwp8; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) - 9) == 1) {
+                            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                            if (trai != null) {
+                                if (anduoc(trai.className.toString()) == 1) {
+                                    let xoatrai = document.querySelector(`.hover9`);
+                                    div.removeChild(xoatrai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) + 11
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp8.className = `piece wp square-${b}`
+                        wwp8 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheophai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 9}`) != null) {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 9}`).className.toString()) == 1) {
+                    let cheotrai = document.createElement("div")
+                    cheotrai.classList.add("piece", "hover9", `square-${diachi(nameClass) - 9}`);
+                    cheotrai.style.backgroundColor = "#ff000080";
+                    cheotrai.onclick = function () {
+                        wp8.style.backgroundColor = "transparent";
+                        let x = document.querySelector(`.hover9`);
+                        div.removeChild(x);
+                        let a = diachi(nameClass)
+                        banco[a % 10][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        for (let i = 1; i < wwp8; i++) {
+                            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover')
+                                if (kiemtra == true) {
+                                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                                    div.removeChild(xoamau);
+                                }
+                            } else break;
+                        }
+                        if (kt(diachi(nameClass) + 11) == 1) {
+                            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+                            if (phai != null) {
+                                if (anduoc(phai.className.toString()) == 1) {
+                                    let xoaphai = document.querySelector(`.hover11`);
+                                    div.removeChild(xoaphai);
+                                }
+                            }
+                        }
+                        let b = diachi(nameClass) - 9
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+                        div.removeChild(an);
+                        temp = true;
+                        wp8.className = `piece wp square-${b}`
+                        wwp8 = 2;
+                        dichuyen()
+                    }
+                    div.appendChild(cheotrai)
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wp8.style.backgroundColor = "transparent";
+        let nameClass = wp8.className.toString();
+        for (let i = 1; i < wwp8; i++) {
+            if (document.querySelector(`.square-${diachi(nameClass) + i}`) != null) {
+                let kiemtra = document.querySelector(`.square-${diachi(nameClass) + i}`).classList.contains('hover');
+                if (kiemtra == 1) {
+                    let xoamau = document.querySelector(`.square-${diachi(nameClass) + i}`);
+                    div.removeChild(xoamau);
+                }
+            }
+
+        }
+        if (kt(diachi(nameClass) + 11) == 1) {
+            let phai = document.querySelector(`.square-${diachi(nameClass) + 11}`)
+            if (phai != null) {
+                if (anduoc(phai.className.toString()) == 1) {
+                    let xoaphai = document.querySelector(`.hover11`);
+                    div.removeChild(xoaphai);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 9) == 1) {
+            let trai = document.querySelector(`.square-${diachi(nameClass) - 9}`)
+            if (trai != null) {
+                if (anduoc(trai.className.toString()) == 1) {
+                    let xoatrai = document.querySelector(`.hover9`);
+                    div.removeChild(xoatrai);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+//Di chuyen xe
 function xe(nameClass) {
             for (let i = 1; i < tren; i++) {
                 let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
@@ -503,7 +1721,240 @@ wr1.onclick = function () {
         temp = true;
     }
 }
-//Di chuyen ma 1
+wr2.onclick = function () {
+    if (temp == true) {
+        wr2.style.backgroundColor = "#957373ad";
+        let nameClass = wr2.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wr2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        console.log(b)
+                        let a = diachi(nameClass)
+                        console.log(a)
+                        console.log(banco[b % 10 - 1][(b - b % 10) / 10 - 1])
+                        console.log(banco[a % 10 - 1][(a - a % 10) / 10 - 1])
+                        banco[b % 10 - 1][(b - b % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        console.log(banco)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        console.log(banco)
+                        xe(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        wr2.className = `piece wr square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            wr2.className = `piece wr square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wr2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        wr2.className = `piece wr square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            wr2.className = `piece wr square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wr2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        wr2.className = `piece wr square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            wr2.className = `piece wr square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wr2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        wr2.className = `piece wr square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            xe(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            wr2.className = `piece wr square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wr2.style.backgroundColor = "transparent";
+        let nameClass = wr2.className.toString()
+        xe(nameClass)
+        tren = 1;
+        duoi = 1;
+        trai = 1;
+        phai = 1;
+        temp = true;
+    }
+}
+//Di chuyen ma
 wn1.onclick = function () {
     if (temp == true) {
         wn1.style.backgroundColor = "#957373ad";
@@ -2402,7 +3853,1905 @@ wn1.onclick = function () {
         temp = true;
     }
 }
-//Di chuyen tuong 1
+wn2.onclick = function () {
+    if (temp == true) {
+        wn2.style.backgroundColor = "#957373ad";
+        let nameClass = wn2.className.toString()
+        if (kt(diachi(nameClass) + 12) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 12}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + 12}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    let x = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                    div.removeChild(x);
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 + 2][(a - a % 10) / 10 - 1 + 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                    console.log(banco)
+                    let b = diachi(nameClass) + 12;
+                    if (kt(diachi(nameClass) + 21) == 1) {
+                        let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        if (dc21 != null) {
+                            if (anduoc(dc21.className.toString()) == 1) {
+                                let xoadc21 = document.querySelector(`.hover10`);
+                                div.removeChild(xoadc21);
+                            }
+                            if (dc21.classList.contains('hover') == true) {
+                                let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                div.removeChild(xoadc21);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 19) == 1) {
+                        let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        if (dc19 != null) {
+                            if (anduoc(dc19.className.toString()) == 1) {
+                                let xoadc19 = document.querySelector(`.hover9`);
+                                div.removeChild(xoadc19);
+                            }
+                            if (dc19.classList.contains('hover') == true) {
+                                let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                div.removeChild(xoadc19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 8) == 1) {
+                        let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        if (dc8 != null) {
+                            if (anduoc(dc8.className.toString()) == 1) {
+                                let xoadc8 = document.querySelector(`.hover1`);
+                                div.removeChild(xoadc8);
+                            }
+                            if (dc8.classList.contains('hover') == true) {
+                                let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                div.removeChild(xoadc8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 8) == 1) {
+                        let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        if (dc_8 != null) {
+                            if (anduoc(dc_8.className.toString()) == 1) {
+                                let xoadc_8 = document.querySelector(`.hover-1`);
+                                div.removeChild(xoadc_8);
+                            }
+                            if (dc_8.classList.contains('hover') == true) {
+                                let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                div.removeChild(xoadc_8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 12) == 1) {
+                        let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        if (dc_12 != null) {
+                            if (anduoc(dc_12.className.toString()) == 1) {
+                                let xoadc_12 = document.querySelector(`.hover-11`);
+                                div.removeChild(xoadc_12);
+                            }
+                            if (dc_12.classList.contains('hover') == true) {
+                                let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                div.removeChild(xoadc_12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 19) == 1) {
+                        let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        if (dc_19 != null) {
+                            if (anduoc(dc_19.className.toString()) == 1) {
+                                let xoadc_19 = document.querySelector(`.hover-9`);
+                                div.removeChild(xoadc_19);
+                            }
+                            if (dc_19.classList.contains('hover') == true) {
+                                let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                div.removeChild(xoadc_19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 21) == 1) {
+                        let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        if (dc_21 != null) {
+                            if (anduoc(dc_21.className.toString()) == 1) {
+                                let xoadc_21 = document.querySelector(`.hover-10`);
+                                div.removeChild(xoadc_21);
+                            }
+                            if (dc_21.classList.contains('hover') == true) {
+                                let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                div.removeChild(xoadc_21);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 12}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + 12}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) + 12;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + 2][(a - a % 10) / 10 - 1 + 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 21) == 1) {
+                            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                            if (dc21 != null) {
+                                if (anduoc(dc21.className.toString()) == 1) {
+                                    let xoadc21 = document.querySelector(`.hover10`);
+                                    div.removeChild(xoadc21);
+                                }
+                                if (dc21.classList.contains('hover') == true) {
+                                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                    div.removeChild(xoadc21);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 19) == 1) {
+                            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                            if (dc19 != null) {
+                                if (anduoc(dc19.className.toString()) == 1) {
+                                    let xoadc19 = document.querySelector(`.hover9`);
+                                    div.removeChild(xoadc19);
+                                }
+                                if (dc19.classList.contains('hover') == true) {
+                                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                    div.removeChild(xoadc19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 8) == 1) {
+                            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                            if (dc8 != null) {
+                                if (anduoc(dc8.className.toString()) == 1) {
+                                    let xoadc8 = document.querySelector(`.hover1`);
+                                    div.removeChild(xoadc8);
+                                }
+                                if (dc8.classList.contains('hover') == true) {
+                                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                    div.removeChild(xoadc8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 8) == 1) {
+                            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                            if (dc_8 != null) {
+                                if (anduoc(dc_8.className.toString()) == 1) {
+                                    let xoadc_8 = document.querySelector(`.hover-1`);
+                                    div.removeChild(xoadc_8);
+                                }
+                                if (dc_8.classList.contains('hover') == true) {
+                                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                    div.removeChild(xoadc_8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 12) == 1) {
+                            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                            if (dc_12 != null) {
+                                if (anduoc(dc_12.className.toString()) == 1) {
+                                    let xoadc_12 = document.querySelector(`.hover-11`);
+                                    div.removeChild(xoadc_12);
+                                }
+                                if (dc_12.classList.contains('hover') == true) {
+                                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                    div.removeChild(xoadc_12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 19) == 1) {
+                            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                            if (dc_19 != null) {
+                                if (anduoc(dc_19.className.toString()) == 1) {
+                                    let xoadc_19 = document.querySelector(`.hover-9`);
+                                    div.removeChild(xoadc_19);
+                                }
+                                if (dc_19.classList.contains('hover') == true) {
+                                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                    div.removeChild(xoadc_19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 21) == 1) {
+                            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                            if (dc_21 != null) {
+                                if (anduoc(dc_21.className.toString()) == 1) {
+                                    let xoadc_21 = document.querySelector(`.hover-10`);
+                                    div.removeChild(xoadc_21);
+                                }
+                                if (dc_21.classList.contains('hover') == true) {
+                                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                    div.removeChild(xoadc_21);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 21) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 21}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + 21}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    div.removeChild(taoDiv);
+                    let b = diachi(nameClass) + 21;
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 + 1][(a - a % 10) / 10 - 1 + 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                    if (kt(diachi(nameClass) + 12) == 1) {
+                        let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        if (dc12 != null) {
+                            if (anduoc(dc12.className.toString()) == 1) {
+                                let xoadc12 = document.querySelector(`.hover11`);
+                                div.removeChild(xoadc12);
+                            }
+                            if (dc12.classList.contains('hover') == true) {
+                                let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                div.removeChild(xoadc12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 19) == 1) {
+                        let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        if (dc19 != null) {
+                            if (anduoc(dc19.className.toString()) == 1) {
+                                let xoadc19 = document.querySelector(`.hover9`);
+                                div.removeChild(xoadc19);
+                            }
+                            if (dc19.classList.contains('hover') == true) {
+                                let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                div.removeChild(xoadc19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 8) == 1) {
+                        let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        if (dc8 != null) {
+                            if (anduoc(dc8.className.toString()) == 1) {
+                                let xoadc8 = document.querySelector(`.hover1`);
+                                div.removeChild(xoadc8);
+                            }
+                            if (dc8.classList.contains('hover') == true) {
+                                let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                div.removeChild(xoadc8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 8) == 1) {
+                        let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        if (dc_8 != null) {
+                            if (anduoc(dc_8.className.toString()) == 1) {
+                                let xoadc_8 = document.querySelector(`.hover-1`);
+                                div.removeChild(xoadc_8);
+                            }
+                            if (dc_8.classList.contains('hover') == true) {
+                                let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                div.removeChild(xoadc_8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 12) == 1) {
+                        let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        if (dc_12 != null) {
+                            if (anduoc(dc_12.className.toString()) == 1) {
+                                let xoadc_12 = document.querySelector(`.hover-11`);
+                                div.removeChild(xoadc_12);
+                            }
+                            if (dc_12.classList.contains('hover') == true) {
+                                let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                div.removeChild(xoadc_12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 19) == 1) {
+                        let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        if (dc_19 != null) {
+                            if (anduoc(dc_19.className.toString()) == 1) {
+                                let xoadc_19 = document.querySelector(`.hover-9`);
+                                div.removeChild(xoadc_19);
+                            }
+                            if (dc_19.classList.contains('hover') == true) {
+                                let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                div.removeChild(xoadc_19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 21) == 1) {
+                        let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        if (dc_21 != null) {
+                            if (anduoc(dc_21.className.toString()) == 1) {
+                                let xoadc_21 = document.querySelector(`.hover-10`);
+                                div.removeChild(xoadc_21);
+                            }
+                            if (dc_21.classList.contains('hover') == true) {
+                                let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                div.removeChild(xoadc_21);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 21}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + 21}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) + 21;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + 1][(a - a % 10) / 10 - 1 + 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 12) == 1) {
+                            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                            if (dc12 != null) {
+                                if (anduoc(dc12.className.toString()) == 1) {
+                                    let xoadc12 = document.querySelector(`.hover11`);
+                                    div.removeChild(xoadc12);
+                                }
+                                if (dc12.classList.contains('hover') == true) {
+                                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                    div.removeChild(xoadc12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 19) == 1) {
+                            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                            if (dc19 != null) {
+                                if (anduoc(dc19.className.toString()) == 1) {
+                                    let xoadc19 = document.querySelector(`.hover9`);
+                                    div.removeChild(xoadc19);
+                                }
+                                if (dc19.classList.contains('hover') == true) {
+                                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                    div.removeChild(xoadc19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 8) == 1) {
+                            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                            if (dc8 != null) {
+                                if (anduoc(dc8.className.toString()) == 1) {
+                                    let xoadc8 = document.querySelector(`.hover1`);
+                                    div.removeChild(xoadc8);
+                                }
+                                if (dc8.classList.contains('hover') == true) {
+                                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                    div.removeChild(xoadc8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 8) == 1) {
+                            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                            if (dc_8 != null) {
+                                if (anduoc(dc_8.className.toString()) == 1) {
+                                    let xoadc_8 = document.querySelector(`.hover-1`);
+                                    div.removeChild(xoadc_8);
+                                }
+                                if (dc_8.classList.contains('hover') == true) {
+                                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                    div.removeChild(xoadc_8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 12) == 1) {
+                            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                            if (dc_12 != null) {
+                                if (anduoc(dc_12.className.toString()) == 1) {
+                                    let xoadc_12 = document.querySelector(`.hover-11`);
+                                    div.removeChild(xoadc_12);
+                                }
+                                if (dc_12.classList.contains('hover') == true) {
+                                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                    div.removeChild(xoadc_12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 19) == 1) {
+                            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                            if (dc_19 != null) {
+                                if (anduoc(dc_19.className.toString()) == 1) {
+                                    let xoadc_19 = document.querySelector(`.hover-9`);
+                                    div.removeChild(xoadc_19);
+                                }
+                                if (dc_19.classList.contains('hover') == true) {
+                                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                    div.removeChild(xoadc_19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 21) == 1) {
+                            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                            if (dc_21 != null) {
+                                if (anduoc(dc_21.className.toString()) == 1) {
+                                    let xoadc_21 = document.querySelector(`.hover-10`);
+                                    div.removeChild(xoadc_21);
+                                }
+                                if (dc_21.classList.contains('hover') == true) {
+                                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                    div.removeChild(xoadc_21);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 19) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 19}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + 19}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    div.removeChild(taoDiv);
+                    let b = diachi(nameClass) + 19;
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 - 1][(a - a % 10) / 10 - 1 + 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                    if (kt(diachi(nameClass) + 21) == 1) {
+                        let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        if (dc21 != null) {
+                            if (anduoc(dc21.className.toString()) == 1) {
+                                let xoadc21 = document.querySelector(`.hover10`);
+                                div.removeChild(xoadc21);
+                            }
+                            if (dc21.classList.contains('hover') == true) {
+                                let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                div.removeChild(xoadc21);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 12) == 1) {
+                        let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        if (dc12 != null) {
+                            if (anduoc(dc12.className.toString()) == 1) {
+                                let xoadc12 = document.querySelector(`.hover11`);
+                                div.removeChild(xoadc12);
+                            }
+                            if (dc12.classList.contains('hover') == true) {
+                                let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                div.removeChild(xoadc12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 8) == 1) {
+                        let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        if (dc8 != null) {
+                            if (anduoc(dc8.className.toString()) == 1) {
+                                let xoadc8 = document.querySelector(`.hover1`);
+                                div.removeChild(xoadc8);
+                            }
+                            if (dc8.classList.contains('hover') == true) {
+                                let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                div.removeChild(xoadc8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 8) == 1) {
+                        let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        if (dc_8 != null) {
+                            if (anduoc(dc_8.className.toString()) == 1) {
+                                let xoadc_8 = document.querySelector(`.hover-1`);
+                                div.removeChild(xoadc_8);
+                            }
+                            if (dc_8.classList.contains('hover') == true) {
+                                let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                div.removeChild(xoadc_8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 12) == 1) {
+                        let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        if (dc_12 != null) {
+                            if (anduoc(dc_12.className.toString()) == 1) {
+                                let xoadc_12 = document.querySelector(`.hover-11`);
+                                div.removeChild(xoadc_12);
+                            }
+                            if (dc_12.classList.contains('hover') == true) {
+                                let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                div.removeChild(xoadc_12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 19) == 1) {
+                        let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        if (dc_19 != null) {
+                            if (anduoc(dc_19.className.toString()) == 1) {
+                                let xoadc_19 = document.querySelector(`.hover-9`);
+                                div.removeChild(xoadc_19);
+                            }
+                            if (dc_19.classList.contains('hover') == true) {
+                                let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                div.removeChild(xoadc_19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 21) == 1) {
+                        let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        if (dc_21 != null) {
+                            if (anduoc(dc_21.className.toString()) == 1) {
+                                let xoadc_21 = document.querySelector(`.hover-10`);
+                                div.removeChild(xoadc_21);
+                            }
+                            if (dc_21.classList.contains('hover') == true) {
+                                let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                div.removeChild(xoadc_21);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 19}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) + 19}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) + 19;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - 1][(a - a % 10) / 10 - 1 + 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 21) == 1) {
+                            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                            if (dc21 != null) {
+                                if (anduoc(dc21.className.toString()) == 1) {
+                                    let xoadc21 = document.querySelector(`.hover10`);
+                                    div.removeChild(xoadc21);
+                                }
+                                if (dc21.classList.contains('hover') == true) {
+                                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                    div.removeChild(xoadc21);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 12) == 1) {
+                            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                            if (dc12 != null) {
+                                if (anduoc(dc12.className.toString()) == 1) {
+                                    let xoadc12 = document.querySelector(`.hover11`);
+                                    div.removeChild(xoadc12);
+                                }
+                                if (dc12.classList.contains('hover') == true) {
+                                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                    div.removeChild(xoadc12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 8) == 1) {
+                            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                            if (dc8 != null) {
+                                if (anduoc(dc8.className.toString()) == 1) {
+                                    let xoadc8 = document.querySelector(`.hover1`);
+                                    div.removeChild(xoadc8);
+                                }
+                                if (dc8.classList.contains('hover') == true) {
+                                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                    div.removeChild(xoadc8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 8) == 1) {
+                            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                            if (dc_8 != null) {
+                                if (anduoc(dc_8.className.toString()) == 1) {
+                                    let xoadc_8 = document.querySelector(`.hover-1`);
+                                    div.removeChild(xoadc_8);
+                                }
+                                if (dc_8.classList.contains('hover') == true) {
+                                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                    div.removeChild(xoadc_8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 12) == 1) {
+                            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                            if (dc_12 != null) {
+                                if (anduoc(dc_12.className.toString()) == 1) {
+                                    let xoadc_12 = document.querySelector(`.hover-11`);
+                                    div.removeChild(xoadc_12);
+                                }
+                                if (dc_12.classList.contains('hover') == true) {
+                                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                    div.removeChild(xoadc_12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 19) == 1) {
+                            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                            if (dc_19 != null) {
+                                if (anduoc(dc_19.className.toString()) == 1) {
+                                    let xoadc_19 = document.querySelector(`.hover-9`);
+                                    div.removeChild(xoadc_19);
+                                }
+                                if (dc_19.classList.contains('hover') == true) {
+                                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                    div.removeChild(xoadc_19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 21) == 1) {
+                            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                            if (dc_21 != null) {
+                                if (anduoc(dc_21.className.toString()) == 1) {
+                                    let xoadc_21 = document.querySelector(`.hover-10`);
+                                    div.removeChild(xoadc_21);
+                                }
+                                if (dc_21.classList.contains('hover') == true) {
+                                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                    div.removeChild(xoadc_21);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 8) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) + 8}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + 8}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    div.removeChild(taoDiv);
+                    let b = diachi(nameClass) + 8;
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 - 2][(a - a % 10) / 10 - 1 + 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                    if (kt(diachi(nameClass) + 21) == 1) {
+                        let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        if (dc21 != null) {
+                            if (anduoc(dc21.className.toString()) == 1) {
+                                let xoadc21 = document.querySelector(`.hover10`);
+                                div.removeChild(xoadc21);
+                            }
+                            if (dc21.classList.contains('hover') == true) {
+                                let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                div.removeChild(xoadc21);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 19) == 1) {
+                        let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        if (dc19 != null) {
+                            if (anduoc(dc19.className.toString()) == 1) {
+                                let xoadc19 = document.querySelector(`.hover9`);
+                                div.removeChild(xoadc19);
+                            }
+                            if (dc19.classList.contains('hover') == true) {
+                                let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                div.removeChild(xoadc19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 12) == 1) {
+                        let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        if (dc12 != null) {
+                            if (anduoc(dc12.className.toString()) == 1) {
+                                let xoadc12 = document.querySelector(`.hover11`);
+                                div.removeChild(xoadc12);
+                            }
+                            if (dc12.classList.contains('hover') == true) {
+                                let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                div.removeChild(xoadc12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 8) == 1) {
+                        let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        if (dc_8 != null) {
+                            if (anduoc(dc_8.className.toString()) == 1) {
+                                let xoadc_8 = document.querySelector(`.hover-1`);
+                                div.removeChild(xoadc_8);
+                            }
+                            if (dc_8.classList.contains('hover') == true) {
+                                let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                div.removeChild(xoadc_8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 12) == 1) {
+                        let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        if (dc_12 != null) {
+                            if (anduoc(dc_12.className.toString()) == 1) {
+                                let xoadc_12 = document.querySelector(`.hover-11`);
+                                div.removeChild(xoadc_12);
+                            }
+                            if (dc_12.classList.contains('hover') == true) {
+                                let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                div.removeChild(xoadc_12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 19) == 1) {
+                        let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        if (dc_19 != null) {
+                            if (anduoc(dc_19.className.toString()) == 1) {
+                                let xoadc_19 = document.querySelector(`.hover-9`);
+                                div.removeChild(xoadc_19);
+                            }
+                            if (dc_19.classList.contains('hover') == true) {
+                                let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                div.removeChild(xoadc_19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 21) == 1) {
+                        let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        if (dc_21 != null) {
+                            if (anduoc(dc_21.className.toString()) == 1) {
+                                let xoadc_21 = document.querySelector(`.hover-10`);
+                                div.removeChild(xoadc_21);
+                            }
+                            if (dc_21.classList.contains('hover') == true) {
+                                let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                div.removeChild(xoadc_21);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) + 8}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + 8}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) + 8;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - 2][(a - a % 10) / 10 - 1 + 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 21) == 1) {
+                            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                            if (dc21 != null) {
+                                if (anduoc(dc21.className.toString()) == 1) {
+                                    let xoadc21 = document.querySelector(`.hover10`);
+                                    div.removeChild(xoadc21);
+                                }
+                                if (dc21.classList.contains('hover') == true) {
+                                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                    div.removeChild(xoadc21);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 19) == 1) {
+                            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                            if (dc19 != null) {
+                                if (anduoc(dc19.className.toString()) == 1) {
+                                    let xoadc19 = document.querySelector(`.hover9`);
+                                    div.removeChild(xoadc19);
+                                }
+                                if (dc19.classList.contains('hover') == true) {
+                                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                    div.removeChild(xoadc19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 12) == 1) {
+                            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                            if (dc12 != null) {
+                                if (anduoc(dc12.className.toString()) == 1) {
+                                    let xoadc12 = document.querySelector(`.hover11`);
+                                    div.removeChild(xoadc12);
+                                }
+                                if (dc12.classList.contains('hover') == true) {
+                                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                    div.removeChild(xoadc12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 8) == 1) {
+                            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                            if (dc_8 != null) {
+                                if (anduoc(dc_8.className.toString()) == 1) {
+                                    let xoadc_8 = document.querySelector(`.hover-1`);
+                                    div.removeChild(xoadc_8);
+                                }
+                                if (dc_8.classList.contains('hover') == true) {
+                                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                    div.removeChild(xoadc_8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 12) == 1) {
+                            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                            if (dc_12 != null) {
+                                if (anduoc(dc_12.className.toString()) == 1) {
+                                    let xoadc_12 = document.querySelector(`.hover-11`);
+                                    div.removeChild(xoadc_12);
+                                }
+                                if (dc_12.classList.contains('hover') == true) {
+                                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                    div.removeChild(xoadc_12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 19) == 1) {
+                            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                            if (dc_19 != null) {
+                                if (anduoc(dc_19.className.toString()) == 1) {
+                                    let xoadc_19 = document.querySelector(`.hover-9`);
+                                    div.removeChild(xoadc_19);
+                                }
+                                if (dc_19.classList.contains('hover') == true) {
+                                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                    div.removeChild(xoadc_19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 21) == 1) {
+                            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                            if (dc_21 != null) {
+                                if (anduoc(dc_21.className.toString()) == 1) {
+                                    let xoadc_21 = document.querySelector(`.hover-10`);
+                                    div.removeChild(xoadc_21);
+                                }
+                                if (dc_21.classList.contains('hover') == true) {
+                                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                    div.removeChild(xoadc_21);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 8) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 8}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - 8}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    div.removeChild(taoDiv);
+                    let b = diachi(nameClass) - 8;
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 + 2][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                    if (kt(diachi(nameClass) + 21) == 1) {
+                        let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        if (dc21 != null) {
+                            if (anduoc(dc21.className.toString()) == 1) {
+                                let xoadc21 = document.querySelector(`.hover10`);
+                                div.removeChild(xoadc21);
+                            }
+                            if (dc21.classList.contains('hover') == true) {
+                                let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                div.removeChild(xoadc21);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 19) == 1) {
+                        let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        if (dc19 != null) {
+                            if (anduoc(dc19.className.toString()) == 1) {
+                                let xoadc19 = document.querySelector(`.hover9`);
+                                div.removeChild(xoadc19);
+                            }
+                            if (dc19.classList.contains('hover') == true) {
+                                let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                div.removeChild(xoadc19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 8) == 1) {
+                        let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        if (dc8 != null) {
+                            if (anduoc(dc8.className.toString()) == 1) {
+                                let xoadc8 = document.querySelector(`.hover1`);
+                                div.removeChild(xoadc8);
+                            }
+                            if (dc8.classList.contains('hover') == true) {
+                                let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                div.removeChild(xoadc8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 12) == 1) {
+                        let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        if (dc12 != null) {
+                            if (anduoc(dc12.className.toString()) == 1) {
+                                let xoadc12 = document.querySelector(`.hover11`);
+                                div.removeChild(xoadc12);
+                            }
+                            if (dc12.classList.contains('hover') == true) {
+                                let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                div.removeChild(xoadc12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 12) == 1) {
+                        let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        if (dc_12 != null) {
+                            if (anduoc(dc_12.className.toString()) == 1) {
+                                let xoadc_12 = document.querySelector(`.hover-11`);
+                                div.removeChild(xoadc_12);
+                            }
+                            if (dc_12.classList.contains('hover') == true) {
+                                let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                div.removeChild(xoadc_12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 19) == 1) {
+                        let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        if (dc_19 != null) {
+                            if (anduoc(dc_19.className.toString()) == 1) {
+                                let xoadc_19 = document.querySelector(`.hover-9`);
+                                div.removeChild(xoadc_19);
+                            }
+                            if (dc_19.classList.contains('hover') == true) {
+                                let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                div.removeChild(xoadc_19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 21) == 1) {
+                        let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        if (dc_21 != null) {
+                            if (anduoc(dc_21.className.toString()) == 1) {
+                                let xoadc_21 = document.querySelector(`.hover-10`);
+                                div.removeChild(xoadc_21);
+                            }
+                            if (dc_21.classList.contains('hover') == true) {
+                                let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                div.removeChild(xoadc_21);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 8}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - 8}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) - 8;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + 2][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 21) == 1) {
+                            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                            if (dc21 != null) {
+                                if (anduoc(dc21.className.toString()) == 1) {
+                                    let xoadc21 = document.querySelector(`.hover10`);
+                                    div.removeChild(xoadc21);
+                                }
+                                if (dc21.classList.contains('hover') == true) {
+                                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                    div.removeChild(xoadc21);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 19) == 1) {
+                            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                            if (dc19 != null) {
+                                if (anduoc(dc19.className.toString()) == 1) {
+                                    let xoadc19 = document.querySelector(`.hover9`);
+                                    div.removeChild(xoadc19);
+                                }
+                                if (dc19.classList.contains('hover') == true) {
+                                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                    div.removeChild(xoadc19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 8) == 1) {
+                            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                            if (dc8 != null) {
+                                if (anduoc(dc8.className.toString()) == 1) {
+                                    let xoadc8 = document.querySelector(`.hover1`);
+                                    div.removeChild(xoadc8);
+                                }
+                                if (dc8.classList.contains('hover') == true) {
+                                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                    div.removeChild(xoadc8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 12) == 1) {
+                            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                            if (dc12 != null) {
+                                if (anduoc(dc12.className.toString()) == 1) {
+                                    let xoadc12 = document.querySelector(`.hover11`);
+                                    div.removeChild(xoadc12);
+                                }
+                                if (dc12.classList.contains('hover') == true) {
+                                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                    div.removeChild(xoadc12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 12) == 1) {
+                            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                            if (dc_12 != null) {
+                                if (anduoc(dc_12.className.toString()) == 1) {
+                                    let xoadc_12 = document.querySelector(`.hover-11`);
+                                    div.removeChild(xoadc_12);
+                                }
+                                if (dc_12.classList.contains('hover') == true) {
+                                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                    div.removeChild(xoadc_12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 19) == 1) {
+                            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                            if (dc_19 != null) {
+                                if (anduoc(dc_19.className.toString()) == 1) {
+                                    let xoadc_19 = document.querySelector(`.hover-9`);
+                                    div.removeChild(xoadc_19);
+                                }
+                                if (dc_19.classList.contains('hover') == true) {
+                                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                    div.removeChild(xoadc_19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 21) == 1) {
+                            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                            if (dc_21 != null) {
+                                if (anduoc(dc_21.className.toString()) == 1) {
+                                    let xoadc_21 = document.querySelector(`.hover-10`);
+                                    div.removeChild(xoadc_21);
+                                }
+                                if (dc_21.classList.contains('hover') == true) {
+                                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                    div.removeChild(xoadc_21);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 19) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 19}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - 19}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    div.removeChild(taoDiv);
+                    let b = diachi(nameClass) - 19;
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 + 1][(a - a % 10) / 10 - 1 - 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                    if (kt(diachi(nameClass) + 21) == 1) {
+                        let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        if (dc21 != null) {
+                            if (anduoc(dc21.className.toString()) == 1) {
+                                let xoadc21 = document.querySelector(`.hover10`);
+                                div.removeChild(xoadc21);
+                            }
+                            if (dc21.classList.contains('hover') == true) {
+                                let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                div.removeChild(xoadc21);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 19) == 1) {
+                        let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        if (dc19 != null) {
+                            if (anduoc(dc19.className.toString()) == 1) {
+                                let xoadc19 = document.querySelector(`.hover9`);
+                                div.removeChild(xoadc19);
+                            }
+                            if (dc19.classList.contains('hover') == true) {
+                                let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                div.removeChild(xoadc19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 8) == 1) {
+                        let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        if (dc8 != null) {
+                            if (anduoc(dc8.className.toString()) == 1) {
+                                let xoadc8 = document.querySelector(`.hover1`);
+                                div.removeChild(xoadc8);
+                            }
+                            if (dc8.classList.contains('hover') == true) {
+                                let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                div.removeChild(xoadc8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 8) == 1) {
+                        let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        if (dc_8 != null) {
+                            if (anduoc(dc_8.className.toString()) == 1) {
+                                let xoadc_8 = document.querySelector(`.hover-1`);
+                                div.removeChild(xoadc_8);
+                            }
+                            if (dc_8.classList.contains('hover') == true) {
+                                let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                div.removeChild(xoadc_8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 12) == 1) {
+                        let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        if (dc_12 != null) {
+                            if (anduoc(dc_12.className.toString()) == 1) {
+                                let xoadc_12 = document.querySelector(`.hover-11`);
+                                div.removeChild(xoadc_12);
+                            }
+                            if (dc_12.classList.contains('hover') == true) {
+                                let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                div.removeChild(xoadc_12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 12) == 1) {
+                        let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        if (dc12 != null) {
+                            if (anduoc(dc12.className.toString()) == 1) {
+                                let xoadc12 = document.querySelector(`.hover11`);
+                                div.removeChild(xoadc12);
+                            }
+                            if (dc12.classList.contains('hover') == true) {
+                                let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                div.removeChild(xoadc12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 21) == 1) {
+                        let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        if (dc_21 != null) {
+                            if (anduoc(dc_21.className.toString()) == 1) {
+                                let xoadc_21 = document.querySelector(`.hover-10`);
+                                div.removeChild(xoadc_21);
+                            }
+                            if (dc_21.classList.contains('hover') == true) {
+                                let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                div.removeChild(xoadc_21);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 19}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) - 19}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) - 19;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + 1][(a - a % 10) / 10 - 1 - 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 21) == 1) {
+                            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                            if (dc21 != null) {
+                                if (anduoc(dc21.className.toString()) == 1) {
+                                    let xoadc21 = document.querySelector(`.hover10`);
+                                    div.removeChild(xoadc21);
+                                }
+                                if (dc21.classList.contains('hover') == true) {
+                                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                    div.removeChild(xoadc21);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 19) == 1) {
+                            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                            if (dc19 != null) {
+                                if (anduoc(dc19.className.toString()) == 1) {
+                                    let xoadc19 = document.querySelector(`.hover9`);
+                                    div.removeChild(xoadc19);
+                                }
+                                if (dc19.classList.contains('hover') == true) {
+                                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                    div.removeChild(xoadc19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 8) == 1) {
+                            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                            if (dc8 != null) {
+                                if (anduoc(dc8.className.toString()) == 1) {
+                                    let xoadc8 = document.querySelector(`.hover1`);
+                                    div.removeChild(xoadc8);
+                                }
+                                if (dc8.classList.contains('hover') == true) {
+                                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                    div.removeChild(xoadc8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 8) == 1) {
+                            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                            if (dc_8 != null) {
+                                if (anduoc(dc_8.className.toString()) == 1) {
+                                    let xoadc_8 = document.querySelector(`.hover-1`);
+                                    div.removeChild(xoadc_8);
+                                }
+                                if (dc_8.classList.contains('hover') == true) {
+                                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                    div.removeChild(xoadc_8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 12) == 1) {
+                            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                            if (dc_12 != null) {
+                                if (anduoc(dc_12.className.toString()) == 1) {
+                                    let xoadc_12 = document.querySelector(`.hover-11`);
+                                    div.removeChild(xoadc_12);
+                                }
+                                if (dc_12.classList.contains('hover') == true) {
+                                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                    div.removeChild(xoadc_12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 12) == 1) {
+                            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                            if (dc12 != null) {
+                                if (anduoc(dc12.className.toString()) == 1) {
+                                    let xoadc12 = document.querySelector(`.hover11`);
+                                    div.removeChild(xoadc12);
+                                }
+                                if (dc12.classList.contains('hover') == true) {
+                                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                    div.removeChild(xoadc12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 21) == 1) {
+                            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                            if (dc_21 != null) {
+                                if (anduoc(dc_21.className.toString()) == 1) {
+                                    let xoadc_21 = document.querySelector(`.hover-10`);
+                                    div.removeChild(xoadc_21);
+                                }
+                                if (dc_21.classList.contains('hover') == true) {
+                                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                    div.removeChild(xoadc_21);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 21) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 21}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - 21}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    div.removeChild(taoDiv);
+                    let b = diachi(nameClass) - 21;
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 - 1][(a - a % 10) / 10 - 1 - 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                    if (kt(diachi(nameClass) + 21) == 1) {
+                        let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        if (dc21 != null) {
+                            if (anduoc(dc21.className.toString()) == 1) {
+                                let xoadc21 = document.querySelector(`.hover10`);
+                                div.removeChild(xoadc21);
+                            }
+                            if (dc21.classList.contains('hover') == true) {
+                                let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                div.removeChild(xoadc21);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 19) == 1) {
+                        let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        if (dc19 != null) {
+                            if (anduoc(dc19.className.toString()) == 1) {
+                                let xoadc19 = document.querySelector(`.hover9`);
+                                div.removeChild(xoadc19);
+                            }
+                            if (dc19.classList.contains('hover') == true) {
+                                let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                div.removeChild(xoadc19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 8) == 1) {
+                        let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        if (dc8 != null) {
+                            if (anduoc(dc8.className.toString()) == 1) {
+                                let xoadc8 = document.querySelector(`.hover1`);
+                                div.removeChild(xoadc8);
+                            }
+                            if (dc8.classList.contains('hover') == true) {
+                                let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                div.removeChild(xoadc8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 8) == 1) {
+                        let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        if (dc_8 != null) {
+                            if (anduoc(dc_8.className.toString()) == 1) {
+                                let xoadc_8 = document.querySelector(`.hover-1`);
+                                div.removeChild(xoadc_8);
+                            }
+                            if (dc_8.classList.contains('hover') == true) {
+                                let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                div.removeChild(xoadc_8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 12) == 1) {
+                        let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        if (dc_12 != null) {
+                            if (anduoc(dc_12.className.toString()) == 1) {
+                                let xoadc_12 = document.querySelector(`.hover-11`);
+                                div.removeChild(xoadc_12);
+                            }
+                            if (dc_12.classList.contains('hover') == true) {
+                                let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                div.removeChild(xoadc_12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 19) == 1) {
+                        let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        if (dc_19 != null) {
+                            if (anduoc(dc_19.className.toString()) == 1) {
+                                let xoadc_19 = document.querySelector(`.hover-9`);
+                                div.removeChild(xoadc_19);
+                            }
+                            if (dc_19.classList.contains('hover') == true) {
+                                let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                div.removeChild(xoadc_19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 12) == 1) {
+                        let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        if (dc12 != null) {
+                            if (anduoc(dc12.className.toString()) == 1) {
+                                let xoadc12 = document.querySelector(`.hover11`);
+                                div.removeChild(xoadc12);
+                            }
+                            if (dc12.classList.contains('hover') == true) {
+                                let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                div.removeChild(xoadc12);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 21}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - 21}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) - 21;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - 1][(a - a % 10) / 10 - 1 - 2] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 21) == 1) {
+                            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                            if (dc21 != null) {
+                                if (anduoc(dc21.className.toString()) == 1) {
+                                    let xoadc21 = document.querySelector(`.hover10`);
+                                    div.removeChild(xoadc21);
+                                }
+                                if (dc21.classList.contains('hover') == true) {
+                                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                    div.removeChild(xoadc21);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 19) == 1) {
+                            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                            if (dc19 != null) {
+                                if (anduoc(dc19.className.toString()) == 1) {
+                                    let xoadc19 = document.querySelector(`.hover9`);
+                                    div.removeChild(xoadc19);
+                                }
+                                if (dc19.classList.contains('hover') == true) {
+                                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                    div.removeChild(xoadc19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 8) == 1) {
+                            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                            if (dc8 != null) {
+                                if (anduoc(dc8.className.toString()) == 1) {
+                                    let xoadc8 = document.querySelector(`.hover1`);
+                                    div.removeChild(xoadc8);
+                                }
+                                if (dc8.classList.contains('hover') == true) {
+                                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                    div.removeChild(xoadc8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 8) == 1) {
+                            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                            if (dc_8 != null) {
+                                if (anduoc(dc_8.className.toString()) == 1) {
+                                    let xoadc_8 = document.querySelector(`.hover-1`);
+                                    div.removeChild(xoadc_8);
+                                }
+                                if (dc_8.classList.contains('hover') == true) {
+                                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                    div.removeChild(xoadc_8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 12) == 1) {
+                            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                            if (dc_12 != null) {
+                                if (anduoc(dc_12.className.toString()) == 1) {
+                                    let xoadc_12 = document.querySelector(`.hover-11`);
+                                    div.removeChild(xoadc_12);
+                                }
+                                if (dc_12.classList.contains('hover') == true) {
+                                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                                    div.removeChild(xoadc_12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 19) == 1) {
+                            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                            if (dc_19 != null) {
+                                if (anduoc(dc_19.className.toString()) == 1) {
+                                    let xoadc_19 = document.querySelector(`.hover-9`);
+                                    div.removeChild(xoadc_19);
+                                }
+                                if (dc_19.classList.contains('hover') == true) {
+                                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                    div.removeChild(xoadc_19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 12) == 1) {
+                            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                            if (dc12 != null) {
+                                if (anduoc(dc12.className.toString()) == 1) {
+                                    let xoadc12 = document.querySelector(`.hover11`);
+                                    div.removeChild(xoadc12);
+                                }
+                                if (dc12.classList.contains('hover') == true) {
+                                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                    div.removeChild(xoadc12);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 12) == 1) {
+            if (document.querySelector(`.square-${diachi(nameClass) - 12}`) == null) {
+                let taoDiv = document.createElement("div")
+                taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - 12}`);
+                taoDiv.style.backgroundColor = "#957373ad";
+                taoDiv.onclick = function () {
+                    wn2.style.backgroundColor = "transparent";
+                    div.removeChild(taoDiv);
+                    let b = diachi(nameClass) - 12;
+                    let a = diachi(nameClass)
+                    banco[a % 10 - 1 - 2][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                    banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                    if (kt(diachi(nameClass) + 21) == 1) {
+                        let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                        if (dc21 != null) {
+                            if (anduoc(dc21.className.toString()) == 1) {
+                                let xoadc21 = document.querySelector(`.hover10`);
+                                div.removeChild(xoadc21);
+                            }
+                            if (dc21.classList.contains('hover') == true) {
+                                let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                div.removeChild(xoadc21);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 19) == 1) {
+                        let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                        if (dc19 != null) {
+                            if (anduoc(dc19.className.toString()) == 1) {
+                                let xoadc19 = document.querySelector(`.hover9`);
+                                div.removeChild(xoadc19);
+                            }
+                            if (dc19.classList.contains('hover') == true) {
+                                let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                div.removeChild(xoadc19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 8) == 1) {
+                        let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                        if (dc8 != null) {
+                            if (anduoc(dc8.className.toString()) == 1) {
+                                let xoadc8 = document.querySelector(`.hover1`);
+                                div.removeChild(xoadc8);
+                            }
+                            if (dc8.classList.contains('hover') == true) {
+                                let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                div.removeChild(xoadc8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 8) == 1) {
+                        let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                        if (dc_8 != null) {
+                            if (anduoc(dc_8.className.toString()) == 1) {
+                                let xoadc_8 = document.querySelector(`.hover-1`);
+                                div.removeChild(xoadc_8);
+                            }
+                            if (dc_8.classList.contains('hover') == true) {
+                                let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                div.removeChild(xoadc_8);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) + 12) == 1) {
+                        let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                        if (dc12 != null) {
+                            if (anduoc(dc12.className.toString()) == 1) {
+                                let xoadc12 = document.querySelector(`.hover11`);
+                                div.removeChild(xoadc12);
+                            }
+                            if (dc12.classList.contains('hover') == true) {
+                                let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                div.removeChild(xoadc12);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 19) == 1) {
+                        let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                        if (dc_19 != null) {
+                            if (anduoc(dc_19.className.toString()) == 1) {
+                                let xoadc_19 = document.querySelector(`.hover-9`);
+                                div.removeChild(xoadc_19);
+                            }
+                            if (dc_19.classList.contains('hover') == true) {
+                                let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                div.removeChild(xoadc_19);
+                            }
+                        }
+                    }
+                    if (kt(diachi(nameClass) - 21) == 1) {
+                        let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                        if (dc_21 != null) {
+                            if (anduoc(dc_21.className.toString()) == 1) {
+                                let xoadc_21 = document.querySelector(`.hover-10`);
+                                div.removeChild(xoadc_21);
+                            }
+                            if (dc_21.classList.contains('hover') == true) {
+                                let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                div.removeChild(xoadc_21);
+                            }
+                        }
+                    }
+                    temp = true;
+                    wn2.className = `piece wn square-${b}`
+                    dichuyen()
+                }
+                div.appendChild(taoDiv);
+            } else {
+                if (anduoc(document.querySelector(`.square-${diachi(nameClass) - 12}`).className.toString()) == 1) {
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - 12}`);
+                    taoDiv.style.backgroundColor = "#ff000080";
+                    taoDiv.onclick = function () {
+                        wn2.style.backgroundColor = "transparent";
+                        div.removeChild(taoDiv);
+                        let b = diachi(nameClass) - 12;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - 2][(a - a % 10) / 10 - 1 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        if (kt(diachi(nameClass) + 21) == 1) {
+                            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+                            if (dc21 != null) {
+                                if (anduoc(dc21.className.toString()) == 1) {
+                                    let xoadc21 = document.querySelector(`.hover10`);
+                                    div.removeChild(xoadc21);
+                                }
+                                if (dc21.classList.contains('hover') == true) {
+                                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                                    div.removeChild(xoadc21);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 19) == 1) {
+                            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+                            if (dc19 != null) {
+                                if (anduoc(dc19.className.toString()) == 1) {
+                                    let xoadc19 = document.querySelector(`.hover9`);
+                                    div.removeChild(xoadc19);
+                                }
+                                if (dc19.classList.contains('hover') == true) {
+                                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                                    div.removeChild(xoadc19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 8) == 1) {
+                            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+                            if (dc8 != null) {
+                                if (anduoc(dc8.className.toString()) == 1) {
+                                    let xoadc8 = document.querySelector(`.hover1`);
+                                    div.removeChild(xoadc8);
+                                }
+                                if (dc8.classList.contains('hover') == true) {
+                                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                                    div.removeChild(xoadc8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 8) == 1) {
+                            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+                            if (dc_8 != null) {
+                                if (anduoc(dc_8.className.toString()) == 1) {
+                                    let xoadc_8 = document.querySelector(`.hover-1`);
+                                    div.removeChild(xoadc_8);
+                                }
+                                if (dc_8.classList.contains('hover') == true) {
+                                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                                    div.removeChild(xoadc_8);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) + 12) == 1) {
+                            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+                            if (dc12 != null) {
+                                if (anduoc(dc12.className.toString()) == 1) {
+                                    let xoadc12 = document.querySelector(`.hover11`);
+                                    div.removeChild(xoadc12);
+                                }
+                                if (dc12.classList.contains('hover') == true) {
+                                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                                    div.removeChild(xoadc12);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 19) == 1) {
+                            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+                            if (dc_19 != null) {
+                                if (anduoc(dc_19.className.toString()) == 1) {
+                                    let xoadc_19 = document.querySelector(`.hover-9`);
+                                    div.removeChild(xoadc_19);
+                                }
+                                if (dc_19.classList.contains('hover') == true) {
+                                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                                    div.removeChild(xoadc_19);
+                                }
+                            }
+                        }
+                        if (kt(diachi(nameClass) - 21) == 1) {
+                            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+                            if (dc_21 != null) {
+                                if (anduoc(dc_21.className.toString()) == 1) {
+                                    let xoadc_21 = document.querySelector(`.hover-10`);
+                                    div.removeChild(xoadc_21);
+                                }
+                                if (dc_21.classList.contains('hover') == true) {
+                                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                                    div.removeChild(xoadc_21);
+                                }
+                            }
+                        }
+                        temp = true;
+                        let an = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+                        div.removeChild(an);
+                        wn2.className = `piece wn square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+
+                }
+            }
+        }
+        temp = false;
+    } else {
+        wn2.style.backgroundColor = "transparent";
+        let nameClass = wn2.className.toString()
+        if (kt(diachi(nameClass) + 21) == 1) {
+            let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
+            if (dc21 != null) {
+                if (anduoc(dc21.className.toString()) == 1) {
+                    let xoadc21 = document.querySelector(`.hover10`);
+                    div.removeChild(xoadc21);
+                }
+                if (dc21.classList.contains('hover') == true) {
+                    let xoadc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`);
+                    div.removeChild(xoadc21);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 19) == 1) {
+            let dc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`)
+            if (dc19 != null) {
+                if (anduoc(dc19.className.toString()) == 1) {
+                    let xoadc19 = document.querySelector(`.hover9`);
+                    div.removeChild(xoadc19);
+                }
+                if (dc19.classList.contains('hover') == true) {
+                    let xoadc19 = document.querySelector(`.square-${diachi(nameClass) + 19}`);
+                    div.removeChild(xoadc19);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 12) == 1) {
+            let dc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`)
+            if (dc12 != null) {
+                if (anduoc(dc12.className.toString()) == 1) {
+                    let xoadc12 = document.querySelector(`.hover11`);
+                    div.removeChild(xoadc12);
+                }
+                if (dc12.classList.contains('hover') == true) {
+                    let xoadc12 = document.querySelector(`.square-${diachi(nameClass) + 12}`);
+                    div.removeChild(xoadc12);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) + 8) == 1) {
+            let dc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`)
+            if (dc8 != null) {
+                if (anduoc(dc8.className.toString()) == 1) {
+                    let xoadc8 = document.querySelector(`.hover1`);
+                    div.removeChild(xoadc8);
+                }
+                if (dc8.classList.contains('hover') == true) {
+                    let xoadc8 = document.querySelector(`.square-${diachi(nameClass) + 8}`);
+                    div.removeChild(xoadc8);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 8) == 1) {
+            let dc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`)
+            if (dc_8 != null) {
+                if (anduoc(dc_8.className.toString()) == 1) {
+                    let xoadc_8 = document.querySelector(`.hover-1`);
+                    div.removeChild(xoadc_8);
+                }
+                if (dc_8.classList.contains('hover') == true) {
+                    let xoadc_8 = document.querySelector(`.square-${diachi(nameClass) - 8}`);
+                    div.removeChild(xoadc_8);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 12) == 1) {
+            let dc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`)
+            if (dc_12 != null) {
+                if (anduoc(dc_12.className.toString()) == 1) {
+                    let xoadc_12 = document.querySelector(`.hover-11`);
+                    div.removeChild(xoadc_12);
+                }
+                if (dc_12.classList.contains('hover') == true) {
+                    let xoadc_12 = document.querySelector(`.square-${diachi(nameClass) - 12}`);
+                    div.removeChild(xoadc_12);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 19) == 1) {
+            let dc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`)
+            if (dc_19 != null) {
+                if (anduoc(dc_19.className.toString()) == 1) {
+                    let xoadc_19 = document.querySelector(`.hover-9`);
+                    div.removeChild(xoadc_19);
+                }
+                if (dc_19.classList.contains('hover') == true) {
+                    let xoadc_19 = document.querySelector(`.square-${diachi(nameClass) - 19}`);
+                    div.removeChild(xoadc_19);
+                }
+            }
+        }
+        if (kt(diachi(nameClass) - 21) == 1) {
+            let dc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`)
+            if (dc_21 != null) {
+                if (anduoc(dc_21.className.toString()) == 1) {
+                    let xoadc_21 = document.querySelector(`.hover-10`);
+                    div.removeChild(xoadc_21);
+                }
+                if (dc_21.classList.contains('hover') == true) {
+                    let xoadc_21 = document.querySelector(`.square-${diachi(nameClass) - 21}`);
+                    div.removeChild(xoadc_21);
+                }
+            }
+        }
+        temp = true;
+    }
+}
+//Di chuyen tuong
 function tuong(nameClass) {
     for (let i = 1; i < phaitren; i++) {
         let x = document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`);
@@ -2684,6 +6033,237 @@ wb1.onclick = function () {
     } else {
         wb1.style.backgroundColor = "transparent";
         let nameClass = wb1.className.toString()
+        tuong(nameClass)
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wb2.onclick = function () {
+    if (temp == true) {
+        wb2.style.backgroundColor = "#957373ad";
+        let nameClass = wb2.className.toString()
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wb2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        tuong(nameClass)
+                        temp = true;
+                        traitren = 1;
+                        traiduoi = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        wb2.className = `piece wb square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wb2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wb2.className = `piece wb square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wb2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        tuong(nameClass)
+                        temp = true;
+                        traitren = 1;
+                        traiduoi = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        wb2.className = `piece wb square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wb2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            traitren = 1;
+                            traiduoi = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            wb2.className = `piece wb square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wb2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        tuong(nameClass)
+                        temp = true;
+                        traitren = 1;
+                        traiduoi = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        wb2.className = `piece wb square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wb2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wb2.className = `piece wb square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wb2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        tuong(nameClass)
+                        temp = true;
+                        traitren = 1;
+                        traiduoi = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        wb2.className = `piece wb square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wb2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wb2.className = `piece wb square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wb2.style.backgroundColor = "transparent";
+        let nameClass = wb2.className.toString()
         tuong(nameClass)
         phaitren = 1;
         phaiduoi = 1;
@@ -2986,7 +6566,7 @@ wq1.onclick = function () {
                         taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
                         taoDiv.style.backgroundColor = "#ff000080";
                         taoDiv.onclick = function () {
-                            wb1.style.backgroundColor = "transparent";
+                            wq1.style.backgroundColor = "transparent";
                             let b = diachi(nameClass) + phaitren * 10 + phaitren;
                             let a = diachi(nameClass)
                             banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
@@ -3050,7 +6630,7 @@ wq1.onclick = function () {
                         taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
                         taoDiv.style.backgroundColor = "#ff000080";
                         taoDiv.onclick = function () {
-                            wb1.style.backgroundColor = "transparent";
+                            wq1.style.backgroundColor = "transparent";
                             let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
                             let a = diachi(nameClass)
                             banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
@@ -3114,7 +6694,7 @@ wq1.onclick = function () {
                         taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
                         taoDiv.style.backgroundColor = "#ff000080";
                         taoDiv.onclick = function () {
-                            wb1.style.backgroundColor = "transparent";
+                            wq1.style.backgroundColor = "transparent";
                             let b = diachi(nameClass) - traitren * 10 + traitren;
                             let a = diachi(nameClass)
                             banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
@@ -3178,7 +6758,7 @@ wq1.onclick = function () {
                         taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
                         taoDiv.style.backgroundColor = "#ff000080";
                         taoDiv.onclick = function () {
-                            wb1.style.backgroundColor = "transparent";
+                            wq1.style.backgroundColor = "transparent";
                             let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
                             let a = diachi(nameClass)
                             banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
