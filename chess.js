@@ -520,7 +520,7 @@ wn1.onclick = function () {
                     let a = diachi(nameClass)
                     banco[a % 10 - 1 + 2][(a - a % 10) / 10 - 1 + 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
                     banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
-
+                    console.log(banco)
                     let b = diachi(nameClass) + 12;
                     if (kt(diachi(nameClass) + 21) == 1) {
                         let dc21 = document.querySelector(`.square-${diachi(nameClass) + 21}`)
@@ -5130,7 +5130,7 @@ wk1.onclick = function () {
         temp = true;
     }
 }
-var ds = 2
+var ds = 4
 function dichuyen() {
     let xetvitri = dendc(ds).toString()
     console.log(xetvitri)
@@ -5252,8 +5252,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0;
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1);
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -5267,8 +5268,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j]
                                 banco[i + ir][j] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i + ir;
@@ -5287,6 +5289,7 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
+                            max1 = max1 + trangdc(dosau - 1)
                             if(max<max1 + trangdc(dosau - 1)) {
                                 max = max1 + trangdc(dosau - 1);
                                 A = i;
@@ -5302,8 +5305,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j]
                                 banco[i - ir][j] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1);
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i - ir;
@@ -5322,8 +5326,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i ;
@@ -5337,8 +5342,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i][j + ir]
                                 banco[i][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i ;
@@ -5357,8 +5363,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i ;
@@ -5372,8 +5379,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i][j - ir]
                                 banco[i][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i;
@@ -5393,9 +5401,10 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         if (banco[i - ir][j] == 0) {
                             banco[i - ir][j] = banco[i][j];
                             banco[i][j] = 0;
-                            max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = 0;
+                            max1 = max1 + trangdc(dosau - 1);
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - ir;
@@ -5411,8 +5420,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 1][j - 1]
                             banco[i - 1][j - 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i-1;
@@ -5428,8 +5438,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 1][j + 1]
                             banco[i - 1][j + 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - 1;
@@ -5445,8 +5456,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - 1][j] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - 1;
@@ -5462,8 +5474,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 1][j - 1]
                             banco[i - 1][j - 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i-1;
@@ -5479,8 +5492,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 1][j + 1]
                             banco[i - 1][j + 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - 1;
@@ -5498,8 +5512,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i + 2][j + 1] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i + 2;
@@ -5513,8 +5528,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i + 2][j + 1]
                             banco[i + 2][j + 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + 2;
@@ -5530,8 +5546,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i - 2][j + 1] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i - 2;
@@ -5545,8 +5562,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 2][j + 1]
                             banco[i - 2][j + 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - 2;
@@ -5562,8 +5580,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i + 2][j - 1] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i + 2;
@@ -5577,8 +5596,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i + 2][j - 1]
                             banco[i + 2][j - 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + 2;
@@ -5594,8 +5614,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i - 2][j - 1] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i - 2;
@@ -5609,8 +5630,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 2][j - 1]
                             banco[i - 2][j - 1] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - 2;
@@ -5626,8 +5648,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i + 1][j + 2] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i + 1;
@@ -5641,8 +5664,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i + 1][j + 2]
                             banco[i + 1][j + 2] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + 1;
@@ -5658,8 +5682,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i + 1][j - 2] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i + 1;
@@ -5668,13 +5693,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i][j] = banco[i + 1][j - 2];
                         banco[i + 1][j - 2] = 0;
                     } else {
-                        if ((diemcong(i + 1, j - 2) == 10) || (diemcong(i + 1, j - 2) == 30) || (diemcong(i + 1, j - 2) == 50) || (diemcong(i + 1, j - 2) == 90) || (diemcong(i + 1, j + 2) == 900)) {
+                        if ((diemcong(i + 1, j - 2) == 10) || (diemcong(i + 1, j - 2) == 30) || (diemcong(i + 1, j - 2) == 50) || (diemcong(i + 1, j - 2) == 90) || (diemcong(i + 1, j - 2) == 900)) {
                             max1 = diemcong(i + 1, j - 2)
                             let x = banco[i + 1][j - 2]
                             banco[i + 1][j - 2] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + 1;
@@ -5690,8 +5716,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i - 1][j + 2] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i - 1;
@@ -5705,13 +5732,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 1][j + 2]
                             banco[i - 1][j + 2] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
-                            A = i;
-                            B = j;
-                            C = i - 1;
-                            D = j + 2;
-                        }
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
+                                A = i;
+                                B = j;
+                                C = i - 1;
+                                D = j + 2;
+                            }
                             banco[i][j] = banco[i - 1][j + 2];
                             banco[i - 1][j + 2] = x;
                         }
@@ -5722,8 +5750,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                         banco[i - 1][j - 2] = banco[i][j];
                         banco[i][j] = 0;
                         max1 = 0
-                        if (max < max1 + trangdc(dosau - 1)) {
-                            max = max1 + trangdc(dosau - 1);
+                        max1 = max1 + trangdc(dosau - 1)
+                        if (max < max1) {
+                            max = max1;
                             A = i;
                             B = j;
                             C = i - 1;
@@ -5737,8 +5766,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             let x = banco[i - 1][j - 2]
                             banco[i - 1][j - 2] = banco[i][j];
                             banco[i][j] = 0;
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - 1;
@@ -5757,8 +5787,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -5772,8 +5803,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j + ir]
                                 banco[i + ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i + ir;
@@ -5792,8 +5824,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - ir;
@@ -5807,8 +5840,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j + ir]
                                 banco[i - ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i - ir;
@@ -5827,8 +5861,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - ir;
@@ -5842,13 +5877,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j - ir]
                                 banco[i - ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
-                                A = i;
-                                B = j;
-                                C = i - ir;
-                                D = j - ir;
-                            }
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i - ir;
+                                    D = j - ir;
+                                }
                                 banco[i][j] = banco[i - ir][j - ir];
                                 banco[i - ir][j - ir] = x;
                             }
@@ -5862,8 +5898,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -5877,13 +5914,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j - ir]
                                 banco[i + ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
-                                A = i;
-                                B = j;
-                                C = i + ir;
-                                D = j - ir;
-                            }
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i + ir;
+                                    D = j - ir;
+                                }
                                 banco[i][j] = banco[i + ir][j - ir];
                                 banco[i + ir][j - ir] = x;
                             }
@@ -5899,8 +5937,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0;
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1);
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -5914,8 +5953,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j]
                                 banco[i + ir][j] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i + ir;
@@ -5934,6 +5974,7 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
+                            max1 = max1 + trangdc(dosau - 1)
                             if(max<max1 + trangdc(dosau - 1)) {
                                 max = max1 + trangdc(dosau - 1);
                                 A = i;
@@ -5949,8 +5990,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j]
                                 banco[i - ir][j] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1);
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i - ir;
@@ -5969,8 +6011,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i ;
@@ -5984,8 +6027,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i][j + ir]
                                 banco[i][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i ;
@@ -6004,8 +6048,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i ;
@@ -6019,8 +6064,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i][j - ir]
                                 banco[i][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i;
@@ -6039,8 +6085,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -6054,8 +6101,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j + ir]
                                 banco[i + ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i + ir;
@@ -6074,8 +6122,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - ir;
@@ -6089,8 +6138,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j + ir]
                                 banco[i - ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i - ir;
@@ -6109,8 +6159,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - ir;
@@ -6124,13 +6175,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j - ir]
                                 banco[i - ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
-                                A = i;
-                                B = j;
-                                C = i - ir;
-                                D = j - ir;
-                            }
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i - ir;
+                                    D = j - ir;
+                                }
                                 banco[i][j] = banco[i - ir][j - ir];
                                 banco[i - ir][j - ir] = x;
                             }
@@ -6144,8 +6196,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -6159,13 +6212,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j - ir]
                                 banco[i + ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
-                                A = i;
-                                B = j;
-                                C = i + ir;
-                                D = j - ir;
-                            }
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i + ir;
+                                    D = j - ir;
+                                }
                                 banco[i][j] = banco[i + ir][j - ir];
                                 banco[i + ir][j - ir] = x;
                             }
@@ -6181,8 +6235,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0;
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1);
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -6196,8 +6251,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j]
                                 banco[i + ir][j] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i + ir;
@@ -6216,6 +6272,7 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
+                            max1 = max1 + trangdc(dosau - 1)
                             if(max<max1 + trangdc(dosau - 1)) {
                                 max = max1 + trangdc(dosau - 1);
                                 A = i;
@@ -6231,8 +6288,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j]
                                 banco[i - ir][j] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1);
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i - ir;
@@ -6251,8 +6309,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i ;
@@ -6266,8 +6325,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i][j + ir]
                                 banco[i][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i ;
@@ -6286,8 +6346,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if(max<max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if(max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i ;
@@ -6301,8 +6362,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i][j - ir]
                                 banco[i][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(max<max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i;
@@ -6321,8 +6383,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -6336,8 +6399,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j + ir]
                                 banco[i + ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i + ir;
@@ -6356,8 +6420,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j + ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - ir;
@@ -6371,8 +6436,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j + ir]
                                 banco[i - ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                    max = max1 + trangdc(dosau - 1);
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
                                     A = i;
                                     B = j;
                                     C = i - ir;
@@ -6391,8 +6457,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i - ir][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i - ir;
@@ -6406,13 +6473,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i - ir][j - ir]
                                 banco[i - ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
-                                A = i;
-                                B = j;
-                                C = i - ir;
-                                D = j - ir;
-                            }
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i - ir;
+                                    D = j - ir;
+                                }
                                 banco[i][j] = banco[i - ir][j - ir];
                                 banco[i - ir][j - ir] = x;
                             }
@@ -6426,8 +6494,9 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                             banco[i + ir][j - ir] = banco[i][j];
                             banco[i][j] = 0;
                             max1 = 0
-                            if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
+                            max1 = max1 + trangdc(dosau - 1)
+                            if (max < max1) {
+                                max = max1;
                                 A = i;
                                 B = j;
                                 C = i + ir;
@@ -6441,13 +6510,14 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                                 let x = banco[i + ir][j - ir]
                                 banco[i + ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
-                                if (max < max1 + trangdc(dosau - 1)) {
-                                max = max1 + trangdc(dosau - 1);
-                                A = i;
-                                B = j;
-                                C = i + ir;
-                                D = j - ir;
-                            }
+                                max1 = max1 + trangdc(dosau - 1)
+                                if (max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i + ir;
+                                    D = j - ir;
+                                }
                                 banco[i][j] = banco[i + ir][j - ir];
                                 banco[i + ir][j - ir] = x;
                             }
@@ -6630,14 +6700,14 @@ function trangdc(dosau)
                     } else {
                         if (kiemtra(i + 1, j) == 1) {
                             if (banco[i + 1][j] == 0) {
-                                banco[i - 1][j] = banco[i][j];
+                                banco[i + 1][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
                                 if(min>min1){
                                     min = min1
                                 }
-                                banco[i][j] = banco[i - 1][j];
-                                banco[i - 1][j] = 0;
+                                banco[i][j] = banco[i + 1][j];
+                                banco[i + 1][j] = 0;
                             }
                         }
                         if (kiemtra(i + 1, j - 1) == 1) {
@@ -7424,7 +7494,8 @@ function trangdc(dosau)
                                 banco[i + ir][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j];
@@ -7435,7 +7506,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j]
                                     banco[i + ir][j] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j];
@@ -7451,7 +7523,8 @@ function trangdc(dosau)
                                 banco[i - ir][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)) {
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1) {
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j];
@@ -7462,7 +7535,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j]
                                     banco[i - ir][j] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j];
@@ -7478,7 +7552,8 @@ function trangdc(dosau)
                                 banco[i][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i][j + ir];
@@ -7489,7 +7564,8 @@ function trangdc(dosau)
                                     let x = banco[i][j + ir]
                                     banco[i][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i][j + ir];
@@ -7505,7 +7581,8 @@ function trangdc(dosau)
                                 banco[i][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i][j - ir];
@@ -7516,7 +7593,8 @@ function trangdc(dosau)
                                     let x = banco[i][j - ir]
                                     banco[i][j - ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i][j - ir];
@@ -7534,7 +7612,8 @@ function trangdc(dosau)
                                 banco[i + ip][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ip][j];
@@ -7547,7 +7626,8 @@ function trangdc(dosau)
                                 let x = banco[i + 1][j - 1]
                                 banco[i + 1][j - 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 1][j - 1];
@@ -7560,7 +7640,8 @@ function trangdc(dosau)
                                 let x = banco[i + 1][j + 1]
                                 banco[i + 1][j + 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 1][j + 1];
@@ -7570,14 +7651,15 @@ function trangdc(dosau)
                     } else {
                         if (kiemtra(i + 1, j) == 1) {
                             if (banco[i + 1][j] == 0) {
-                                banco[i - 1][j] = banco[i][j];
+                                banco[i + 1][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
-                                banco[i][j] = banco[i - 1][j];
-                                banco[i - 1][j] = 0;
+                                banco[i][j] = banco[i + 1][j];
+                                banco[i + 1][j] = 0;
                             }
                         }
                         if (kiemtra(i + 1, j - 1) == 1) {
@@ -7586,7 +7668,8 @@ function trangdc(dosau)
                                 let x = banco[i + 1][j - 1]
                                 banco[i + 1][j - 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 1][j - 1];
@@ -7599,7 +7682,8 @@ function trangdc(dosau)
                                 let x = banco[i + 1][j + 1]
                                 banco[i + 1][j + 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 1][j + 1];
@@ -7614,7 +7698,8 @@ function trangdc(dosau)
                             banco[i + 2][j + 1] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)) {
+                            min1 = min1 + dendc(dosau-1)
+                            if(min>min1) {
                                 min = min1
                             }
                             banco[i][j] = banco[i + 2][j + 1];
@@ -7625,7 +7710,8 @@ function trangdc(dosau)
                                 let x = banco[i + 2][j + 1]
                                 banco[i + 2][j + 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 2][j + 1];
@@ -7638,7 +7724,8 @@ function trangdc(dosau)
                             banco[i - 2][j + 1] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)) {
+                            min1 = min1 + dendc(dosau-1)
+                            if(min>min1) {
                                 min = min1
                             }
                             banco[i][j] = banco[i - 2][j + 1];
@@ -7649,7 +7736,8 @@ function trangdc(dosau)
                                 let x = banco[i - 2][j + 1]
                                 banco[i - 2][j + 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - 2][j + 1];
@@ -7662,7 +7750,8 @@ function trangdc(dosau)
                             banco[i + 2][j - 1] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)) {
+                            min1 = min1 + dendc(dosau-1)
+                            if(min>min1) {
                                 min = min1
                             }
                             banco[i][j] = banco[i + 2][j - 1];
@@ -7673,7 +7762,8 @@ function trangdc(dosau)
                                 let x = banco[i + 2][j - 1]
                                 banco[i + 2][j - 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 2][j - 1];
@@ -7686,7 +7776,8 @@ function trangdc(dosau)
                             banco[i - 2][j - 1] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)) {
+                            min1 = min1 + dendc(dosau-1)
+                            if(min>min1) {
                                 min = min1
                             }
                             banco[i][j] = banco[i - 2][j - 1];
@@ -7697,7 +7788,8 @@ function trangdc(dosau)
                                 let x = banco[i - 2][j - 1]
                                 banco[i - 2][j - 1] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - 2][j - 1];
@@ -7710,7 +7802,8 @@ function trangdc(dosau)
                             banco[i + 1][j + 2] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)) {
+                            min1 = min1 + dendc(dosau-1)
+                            if(min>min1) {
                                 min = min1
                             }
                             banco[i][j] = banco[i + 1][j + 2];
@@ -7721,7 +7814,8 @@ function trangdc(dosau)
                                 let x = banco[i + 1][j + 2]
                                 banco[i + 1][j + 2] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 1][j + 2];
@@ -7734,7 +7828,8 @@ function trangdc(dosau)
                             banco[i + 1][j - 2] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)) {
+                            min1 = min1 + dendc(dosau-1)
+                            if(min>min1) {
                                 min = min1
                             }
                             banco[i][j] = banco[i + 1][j - 2];
@@ -7745,7 +7840,8 @@ function trangdc(dosau)
                                 let x = banco[i + 1][j - 2]
                                 banco[i + 1][j - 2] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + 1][j - 2];
@@ -7758,7 +7854,8 @@ function trangdc(dosau)
                             banco[i - 1][j + 2] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)){
+                            min1 = min1 + dendc(dosau-1)
+                            if(min>min1){
                                 min = min1
                             }
                             banco[i][j] = banco[i - 1][j + 2];
@@ -7769,7 +7866,8 @@ function trangdc(dosau)
                                 let x = banco[i - 1][j + 2]
                                 banco[i - 1][j + 2] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - 1][j + 2];
@@ -7782,9 +7880,10 @@ function trangdc(dosau)
                             banco[i - 1][j - 2] = banco[i][j];
                             banco[i][j] = 0;
                             min1 = 0
-                            if(min>min1 + dendc(dosau-1)){
-                                    min = min1
-                                }
+                            min1 = min1 + dendc(dosau-1)
+                            if(min > min1) {
+                                min = min1
+                            }
                             banco[i][j] = banco[i - 1][j - 2];
                             banco[i - 1][j - 2] = 0;
                         } else {
@@ -7793,7 +7892,8 @@ function trangdc(dosau)
                                 let x = banco[i - 1][j - 2]
                                 banco[i - 1][j - 2] = banco[i][j];
                                 banco[i][j] = 0;
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - 1][j - 2];
@@ -7809,7 +7909,8 @@ function trangdc(dosau)
                                 banco[i + ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j + ir];
@@ -7820,7 +7921,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j + ir]
                                     banco[i + ir][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j + ir];
@@ -7836,7 +7938,8 @@ function trangdc(dosau)
                                 banco[i - ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j + ir];
@@ -7847,7 +7950,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j + ir]
                                     banco[i - ir][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j + ir];
@@ -7863,7 +7967,8 @@ function trangdc(dosau)
                                 banco[i - ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j - ir];
@@ -7874,7 +7979,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j - ir]
                                     banco[i - ir][j - ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j - ir];
@@ -7890,7 +7996,8 @@ function trangdc(dosau)
                                 banco[i + ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j - ir];
@@ -7901,7 +8008,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j - ir]
                                     banco[i + ir][j - ir] = banco[i][j];
                                     banco[i][j] = 0
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j - ir];
@@ -7919,7 +8027,8 @@ function trangdc(dosau)
                                 banco[i + ir][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j];
@@ -7930,7 +8039,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j]
                                     banco[i + ir][j] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j];
@@ -7946,7 +8056,8 @@ function trangdc(dosau)
                                 banco[i - ir][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)) {
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1) {
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j];
@@ -7957,7 +8068,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j]
                                     banco[i - ir][j] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j];
@@ -7973,7 +8085,8 @@ function trangdc(dosau)
                                 banco[i][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i][j + ir];
@@ -7984,7 +8097,8 @@ function trangdc(dosau)
                                     let x = banco[i][j + ir]
                                     banco[i][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i][j + ir];
@@ -8000,7 +8114,8 @@ function trangdc(dosau)
                                 banco[i][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i][j - ir];
@@ -8011,7 +8126,8 @@ function trangdc(dosau)
                                     let x = banco[i][j - ir]
                                     banco[i][j - ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i][j - ir];
@@ -8027,7 +8143,8 @@ function trangdc(dosau)
                                 banco[i + ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j + ir];
@@ -8038,7 +8155,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j + ir]
                                     banco[i + ir][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j + ir];
@@ -8054,7 +8172,8 @@ function trangdc(dosau)
                                 banco[i - ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j + ir];
@@ -8065,7 +8184,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j + ir]
                                     banco[i - ir][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j + ir];
@@ -8081,7 +8201,8 @@ function trangdc(dosau)
                                 banco[i - ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j - ir];
@@ -8092,7 +8213,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j - ir]
                                     banco[i - ir][j - ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j - ir];
@@ -8108,7 +8230,8 @@ function trangdc(dosau)
                                 banco[i + ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j - ir];
@@ -8119,7 +8242,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j - ir]
                                     banco[i + ir][j - ir] = banco[i][j];
                                     banco[i][j] = 0
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j - ir];
@@ -8137,7 +8261,8 @@ function trangdc(dosau)
                                 banco[i + ir][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j];
@@ -8148,7 +8273,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j]
                                     banco[i + ir][j] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j];
@@ -8164,7 +8290,8 @@ function trangdc(dosau)
                                 banco[i - ir][j] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)) {
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1) {
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j];
@@ -8175,7 +8302,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j]
                                     banco[i - ir][j] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j];
@@ -8191,7 +8319,8 @@ function trangdc(dosau)
                                 banco[i][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i][j + ir];
@@ -8202,7 +8331,8 @@ function trangdc(dosau)
                                     let x = banco[i][j + ir]
                                     banco[i][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i][j + ir];
@@ -8218,7 +8348,8 @@ function trangdc(dosau)
                                 banco[i][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min > min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i][j - ir];
@@ -8229,7 +8360,8 @@ function trangdc(dosau)
                                     let x = banco[i][j - ir]
                                     banco[i][j - ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i][j - ir];
@@ -8245,7 +8377,8 @@ function trangdc(dosau)
                                 banco[i + ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j + ir];
@@ -8256,7 +8389,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j + ir]
                                     banco[i + ir][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j + ir];
@@ -8272,7 +8406,8 @@ function trangdc(dosau)
                                 banco[i - ir][j + ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j + ir];
@@ -8283,7 +8418,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j + ir]
                                     banco[i - ir][j + ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j + ir];
@@ -8299,7 +8435,8 @@ function trangdc(dosau)
                                 banco[i - ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i - ir][j - ir];
@@ -8310,7 +8447,8 @@ function trangdc(dosau)
                                     let x = banco[i - ir][j - ir]
                                     banco[i - ir][j - ir] = banco[i][j];
                                     banco[i][j] = 0;
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i - ir][j - ir];
@@ -8326,7 +8464,8 @@ function trangdc(dosau)
                                 banco[i + ir][j - ir] = banco[i][j];
                                 banco[i][j] = 0;
                                 min1 = 0
-                                if(min>min1 + dendc(dosau-1)){
+                                min1 = min1 + dendc(dosau-1)
+                                if(min>min1){
                                     min = min1
                                 }
                                 banco[i][j] = banco[i + ir][j - ir];
@@ -8337,7 +8476,8 @@ function trangdc(dosau)
                                     let x = banco[i + ir][j - ir]
                                     banco[i + ir][j - ir] = banco[i][j];
                                     banco[i][j] = 0
-                                    if(min>min1 + dendc(dosau-1)) {
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1) {
                                         min = min1
                                     }
                                     banco[i][j] = banco[i + ir][j - ir];
