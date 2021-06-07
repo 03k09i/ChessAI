@@ -1431,59 +1431,59 @@ wp8.onclick = function () {
 }
 //Di chuyen xe
 function xe(nameClass) {
-            for (let i = 1; i < tren; i++) {
-                let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
-                div.removeChild(x);
-            }
-            for (let i = 1; i < duoi; i++) {
-                let x = document.querySelector(`.square-${diachi(nameClass) - i}`);
-                div.removeChild(x);
-            }
-            for (let i = 1; i < trai; i++) {
-                let x = document.querySelector(`.square-${diachi(nameClass) - i * 10}`);
-                div.removeChild(x);
-            }
-            for (let i = 1; i < phai; i++) {
-                let x = document.querySelector(`.square-${diachi(nameClass) + i * 10}`);
-                div.removeChild(x);
-            }
-            if (kt(diachi(nameClass) + tren) == 1) {
-                let tren1 = document.querySelector(`.square-${diachi(nameClass) + tren}`)
-                if (tren1 != null) {
-                    if (anduoc(tren1.className.toString()) == 1) {
-                        let xoatren = document.querySelector(`.hover1`);
-                        div.removeChild(xoatren);
-                    }
-                }
-            }
-            if (kt(diachi(nameClass) - duoi) == 1) {
-                let duoi1 = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
-                if (duoi1 != null) {
-                    if (anduoc(duoi1.className.toString()) == 1) {
-                        let xoaduoi = document.querySelector(`.hover-1`);
-                        div.removeChild(xoaduoi);
-                    }
-                }
-            }
-            if (kt(diachi(nameClass) - trai * 10) == 1) {
-                let trai1 = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
-                if (trai1 != null) {
-                    if (anduoc(trai1.className.toString()) == 1) {
-                        let xoatrai = document.querySelector(`.hover-10`);
-                        div.removeChild(xoatrai);
-                    }
-                }
-            }
-            if (kt(diachi(nameClass) + phai * 10) == 1) {
-                let phai1 = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
-                if (phai1 != null) {
-                    if (anduoc(phai1.className.toString()) == 1) {
-                        let xoaphai = document.querySelector(`.hover10`);
-                        div.removeChild(xoaphai);
-                    }
-                }
+    for (let i = 1; i < tren; i++) {
+        let x = document.querySelector(`.square-${diachi(nameClass) + i}`);
+        div.removeChild(x);
+    }
+    for (let i = 1; i < duoi; i++) {
+        let x = document.querySelector(`.square-${diachi(nameClass) - i}`);
+        div.removeChild(x);
+    }
+    for (let i = 1; i < trai; i++) {
+        let x = document.querySelector(`.square-${diachi(nameClass) - i * 10}`);
+        div.removeChild(x);
+    }
+    for (let i = 1; i < phai; i++) {
+        let x = document.querySelector(`.square-${diachi(nameClass) + i * 10}`);
+        div.removeChild(x);
+    }
+    if (kt(diachi(nameClass) + tren) == 1) {
+        let tren1 = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+        if (tren1 != null) {
+            if (anduoc(tren1.className.toString()) == 1) {
+                let xoatren = document.querySelector(`.hover1`);
+                div.removeChild(xoatren);
             }
         }
+    }
+    if (kt(diachi(nameClass) - duoi) == 1) {
+        let duoi1 = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+        if (duoi1 != null) {
+            if (anduoc(duoi1.className.toString()) == 1) {
+                let xoaduoi = document.querySelector(`.hover-1`);
+                div.removeChild(xoaduoi);
+            }
+        }
+    }
+    if (kt(diachi(nameClass) - trai * 10) == 1) {
+        let trai1 = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+        if (trai1 != null) {
+            if (anduoc(trai1.className.toString()) == 1) {
+                let xoatrai = document.querySelector(`.hover-10`);
+                div.removeChild(xoatrai);
+            }
+        }
+    }
+    if (kt(diachi(nameClass) + phai * 10) == 1) {
+        let phai1 = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+        if (phai1 != null) {
+            if (anduoc(phai1.className.toString()) == 1) {
+                let xoaphai = document.querySelector(`.hover10`);
+                div.removeChild(xoaphai);
+            }
+        }
+    }
+}
 var tren = 1;
 var duoi = 1;
 var trai = 1;
@@ -7044,7 +7044,6 @@ wk1.onclick = function () {
                     let a = diachi(nameClass)
                     banco[a % 10 - 1][(a - a % 10) / 10 - 1 + 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
                     banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
-                    dichuyen()
                     if (kt(diachi(nameClass) + 11) == 1) {
                         let dc11 = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         if (dc11 != null) {
@@ -10110,7 +10109,7 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
     }
 
     if(dosau == ds) {
-        let a = A*1000+B*100+C*10+D;
+        let a = A.toString()+B.toString()+C.toString()+D.toString();
         return a
     }
     else {
