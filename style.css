@@ -7,9 +7,9 @@
 }*/
 .banCo{
     background-image: url("https://images.chesscomfiles.com/chess-themes/boards/green/150.png");
-    background-size: 800px;
-    width: 800px;
-    height: 800px;
+    background-size: 720px;
+    width: 720px;
+    height: 720px;
     position: relative;
 
 }
@@ -21,8 +21,8 @@
     cursor: pointer;
     cursor: grab;
     cursor: -webkit-grab;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     left: 0;
     overflow: hidden;
     position: absolute;
@@ -68,195 +68,259 @@
 }
 .square-11 {
     transform: translateY(700%);
+    transition: all 1s;
 }
 .square-21 {
     transform: translate(100%,700%);
+    transition: all 1s;
 }
 .square-31 {
     transform: translate(200%,700%);
+    transition: all 1s;
 }
 .square-41 {
     transform: translate(300%,700%);
+    transition: all 1s;
 }
 .square-51 {
     transform: translate(400%,700%);
+    transition: all 1s;
 }
 .square-61 {
     transform: translate(500%,700%);
+    transition: all 1s;
 }
 .square-71 {
     transform: translate(600%,700%);
+    transition: all 1s;
 }
 .square-81 {
     transform: translate(700%,700%);
+    transition: all 1s;
 }
 .square-12 {
     transform: translateY(600%);
+    transition: all 1s;
 }
 .square-22 {
     transform: translate(100%,600%);
+    transition: all 1s;
 }
 .square-32 {
     transform: translate(200%,600%);
+    transition: all 1s;
 }
 .square-42 {
     transform: translate(300%,600%);
+    transition: all 1s;
 }
 .square-52 {
     transform: translate(400%,600%);
+    transition: all 1s;
 }
 .square-62 {
     transform: translate(500%,600%);
+    transition: all 1s;
 }
 .square-72 {
     transform: translate(600%,600%);
+    transition: all 1s;
 }
 .square-82 {
     transform: translate(700%,600%);
+    transition: all 1s;
 }
 .square-13 {
     transform: translateY(500%);
+    transition: all 1s;
 }
 .square-23 {
     transform: translate(100%,500%);
+    transition: all 1s;
 }
 .square-33 {
     transform: translate(200%,500%);
+    transition: all 1s;
 }
 .square-43 {
     transform: translate(300%,500%);
+    transition: all 1s;
 }
 .square-53 {
     transform: translate(400%,500%);
+    transition: all 1s;
 }
 .square-63 {
     transform: translate(500%,500%);
+    transition: all 1s;
 }
 .square-73 {
     transform: translate(600%,500%);
+    transition: all 1s;
 }
 .square-83 {
     transform: translate(700%,500%);
+    transition: all 1s;
 }
 .square-14 {
     transform: translateY(400%);
+    transition: all 1s;
 }
 .square-24 {
     transform: translate(100%,400%);
+    transition: all 1s;
 }
 .square-34 {
     transform: translate(200%,400%);
+    transition: all 1s;
 }
 .square-44 {
     transform: translate(300%,400%);
+    transition: all 1s;
 }
 .square-54 {
     transform: translate(400%,400%);
+    transition: all 1s;
 }
 .square-64 {
     transform: translate(500%,400%);
+    transition: all 1s;
 }
 .square-74 {
     transform: translate(600%,400%);
+    transition: all 1s;
 }
 .square-84 {
     transform: translate(700%,400%);
+    transition: all 1s;
 }
 .square-15 {
     transform: translateY(300%);
+    transition: all 1s;
 }
 .square-25 {
     transform: translate(100%,300%);
+    transition: all 1s;
 }
 .square-35 {
     transform: translate(200%,300%);
+    transition: all 1s;
 }
 .square-45 {
     transform: translate(300%,300%);
+    transition: all 1s;
 }
 .square-55 {
     transform: translate(400%,300%);
+    transition: all 1s;
 }
 .square-65 {
     transform: translate(500%,300%);
+    transition: all 1s;
 }
 .square-75 {
     transform: translate(600%,300%);
+    transition: all 1s;
 }
 .square-85 {
     transform: translate(700%,300%);
+    transition: all 1s;
 }
 .square-16 {
     transform: translateY(200%);
+    transition: all 1s;
 }
 .square-26 {
     transform: translate(100%,200%);
+    transition: all 1s;
 }
 .square-36 {
     transform: translate(200%,200%);
+    transition: all 1s;
 }
 .square-46 {
     transform: translate(300%,200%);
+    transition: all 1s;
 }
 .square-56 {
     transform: translate(400%,200%);
+    transition: all 1s;
 }
 .square-66 {
     transform: translate(500%,200%);
+    transition: all 1s;
 }
 .square-76 {
     transform: translate(600%,200%);
+    transition: all 1s;
 }
 .square-86 {
     transform: translate(700%,200%);
+    transition: all 1s;
 }
 .square-17 {
     transform: translateY(100%);
+    transition: all 1s;
 }
 .square-27 {
     transform: translate(100%,100%);
+    transition: all 1s;
 }
 .square-37 {
     transform: translate(200%,100%);
+    transition: all 1s;
 }
 .square-47 {
     transform: translate(300%,100%);
+    transition: all 1s;
 }
 .square-57 {
     transform: translate(400%,100%);
+    transition: all 1s;
 }
 .square-67 {
     transform: translate(500%,100%);
+    transition: all 1s;
 }
 .square-77 {
     transform: translate(600%,100%);
+    transition: all 1s;
 }
 .square-87 {
     transform: translate(700%,100%);
+    transition: all 1s;
 }
 .square-18 {
     transform: translateY(0%);
+    transition: all 1s;
 }
 .square-28 {
     transform: translate(100%,0%);
+    transition: all 1s;
 }
 .square-38 {
     transform: translate(200%,0%);
+    transition: all 1s;
 }
 .square-48 {
     transform: translate(300%,0%);
+    transition: all 1s;
 }
 .square-58 {
     transform: translate(400%,0%);
+    transition: all 1s;
 }
 .square-68 {
     transform: translate(500%,0%);
+    transition: all 1s;
 }
 .square-78 {
     transform: translate(600%,0%);
+    transition: all 1s;
 }
 .square-88 {
     transform: translate(700%,0%);
+    transition: all 1s;
 }
 .hover {
     background: none;
