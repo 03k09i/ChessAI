@@ -8709,9 +8709,14 @@ wk1.onclick = function () {
         temp = true;
     }
 }
-var ds = 4
+
+
+
+
+
+var ds = 1
 function dichuyen() {
-    let xetvitri = dendc(ds).toString()
+    let xetvitri = dendc(ds*2).toString()
     console.log(xetvitri)
     console.log(banco)
     let dc = document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className.toString()
