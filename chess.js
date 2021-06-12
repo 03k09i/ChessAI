@@ -31,11 +31,22 @@ var wb2 = document.querySelector('.square-61');
 
 //Toa do queen
 var wq1 = document.querySelector('.square-41');
+var wq2 = document.querySelector('.square-0');
+var wq3 = document.querySelector('.square-1');
+var wq4 = document.querySelector('.square-2');
+var wq5 = document.querySelector('.square-3');
+var wq6 = document.querySelector('.square-4');
+var wq7 = document.querySelector('.square-5');
+var wq8 = document.querySelector('.square-6');
+var wq9 = document.querySelector('.square-7');
+
+
 //Toa do king
 var wk1 = document.querySelector('.square-51');
 
 var div = document.querySelector(".banCo")
 var temp = true
+var ds = 2
 //Di chuyen chuot
 var wwp1 = 3
 wp1.onclick = function () {
@@ -79,7 +90,17 @@ wp1.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp1.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp1)
+                            wq2.className = `piece wq square-${b}`
+                            wq2.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp1.className = `piece wp square-${b}`
+                        }
                         wwp1 = 2;
                         dichuyen()
                     }
@@ -124,7 +145,17 @@ wp1.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp1.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp1)
+                            wq2.className = `piece wq square-${b}`
+                            wq2.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp1.className = `piece wp square-${b}`
+                        }
                         wwp1 = 2;
                         dichuyen()
                     }
@@ -168,7 +199,17 @@ wp1.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp1.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp1)
+                            wq2.className = `piece wq square-${b}`
+                            wq2.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp1.className = `piece wp square-${b}`
+                        }
                         wwp1 = 2;
                         dichuyen()
                     }
@@ -253,7 +294,17 @@ wp2.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp2.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp2)
+                            wq3.className = `piece wq square-${b}`
+                            wq3.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp2.className = `piece wp square-${b}`
+                        }
                         wwp2 = 2;
                         dichuyen()
                     }
@@ -298,7 +349,17 @@ wp2.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp2.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp2)
+                            wq3.className = `piece wq square-${b}`
+                            wq3.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp2.className = `piece wp square-${b}`
+                        }
                         wwp2 = 2;
                         dichuyen()
                     }
@@ -342,7 +403,17 @@ wp2.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp2.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp2)
+                            wq3.className = `piece wq square-${b}`
+                            wq3.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp2.className = `piece wp square-${b}`
+                        }
                         wwp2 = 2;
                         dichuyen()
                     }
@@ -427,7 +498,17 @@ wp3.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp3.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp3)
+                            wq4.className = `piece wq square-${b}`
+                            wq4.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp3.className = `piece wp square-${b}`
+                        }
                         wwp3 = 2;
                         dichuyen()
                     }
@@ -472,7 +553,17 @@ wp3.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp3.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp3)
+                            wq4.className = `piece wq square-${b}`
+                            wq4.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp3.className = `piece wp square-${b}`
+                        }
                         wwp3 = 2;
                         dichuyen()
                     }
@@ -516,7 +607,17 @@ wp3.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp3.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp3)
+                            wq4.className = `piece wq square-${b}`
+                            wq4.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp3.className = `piece wp square-${b}`
+                        }
                         wwp3 = 2;
                         dichuyen()
                     }
@@ -601,7 +702,17 @@ wp4.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp4.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp4)
+                            wq5.className = `piece wq square-${b}`
+                            wq5.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp4.className = `piece wp square-${b}`
+                        }
                         wwp4 = 2;
                         dichuyen()
                     }
@@ -646,7 +757,17 @@ wp4.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp4.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp4)
+                            wq5.className = `piece wq square-${b}`
+                            wq5.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp4.className = `piece wp square-${b}`
+                        }
                         wwp4 = 2;
                         dichuyen()
                     }
@@ -690,7 +811,17 @@ wp4.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp4.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp4)
+                            wq5.className = `piece wq square-${b}`
+                            wq5.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp4.className = `piece wp square-${b}`
+                        }
                         wwp4 = 2;
                         dichuyen()
                     }
@@ -775,7 +906,17 @@ wp5.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp5.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp5)
+                            wq6.className = `piece wq square-${b}`
+                            wq6.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp5.className = `piece wp square-${b}`
+                        }
                         wwp5 = 2;
                         dichuyen()
                     }
@@ -820,7 +961,17 @@ wp5.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp5.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp5)
+                            wq6.className = `piece wq square-${b}`
+                            wq6.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp5.className = `piece wp square-${b}`
+                        }
                         wwp5 = 2;
                         dichuyen()
                     }
@@ -864,7 +1015,17 @@ wp5.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp5.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp5)
+                            wq6.className = `piece wq square-${b}`
+                            wq6.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp5.className = `piece wp square-${b}`
+                        }
                         wwp5 = 2;
                         dichuyen()
                     }
@@ -949,7 +1110,17 @@ wp6.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp6.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp6)
+                            wq7.className = `piece wq square-${b}`
+                            wq7.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp6.className = `piece wp square-${b}`
+                        }
                         wwp6 = 2;
                         dichuyen()
                     }
@@ -994,7 +1165,17 @@ wp6.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp6.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp6)
+                            wq7.className = `piece wq square-${b}`
+                            wq7.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp6.className = `piece wp square-${b}`
+                        }
                         wwp6 = 2;
                         dichuyen()
                     }
@@ -1038,7 +1219,17 @@ wp6.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp6.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp6)
+                            wq7.className = `piece wq square-${b}`
+                            wq7.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp6.className = `piece wp square-${b}`
+                        }
                         wwp6 = 2;
                         dichuyen()
                     }
@@ -1123,7 +1314,17 @@ wp7.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp7.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp7)
+                            wq8.className = `piece wq square-${b}`
+                            wq8.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp7.className = `piece wp square-${b}`
+                        }
                         wwp7 = 2;
                         dichuyen()
                     }
@@ -1168,7 +1369,17 @@ wp7.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp7.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp7)
+                            wq8.className = `piece wq square-${b}`
+                            wq8.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp7.className = `piece wp square-${b}`
+                        }
                         wwp7 = 2;
                         dichuyen()
                     }
@@ -1212,7 +1423,17 @@ wp7.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp7.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp7)
+                            wq8.className = `piece wq square-${b}`
+                            wq8.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp7.className = `piece wp square-${b}`
+                        }
                         wwp7 = 2;
                         dichuyen()
                     }
@@ -1297,7 +1518,17 @@ wp8.onclick = function () {
                             }
                         }
                         temp = true;
-                        wp8.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp8)
+                            wq9.className = `piece wq square-${b}`
+                            wq9.style.display = "block";
+                            banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp8.className = `piece wp square-${b}`
+                        }
                         wwp8 = 2;
                         dichuyen()
                     }
@@ -1342,7 +1573,17 @@ wp8.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) + 11}`)
                         div.removeChild(an);
                         temp = true;
-                        wp8.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp8)
+                            wq9.className = `piece wq square-${b}`
+                            wq9.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10] = 'wq'
+                        }
+                        else
+                        {
+                            wp8.className = `piece wp square-${b}`
+                        }
                         wwp8 = 2;
                         dichuyen()
                     }
@@ -1386,7 +1627,17 @@ wp8.onclick = function () {
                         let an = document.querySelector(`.square-${diachi(nameClass) - 9}`)
                         div.removeChild(an);
                         temp = true;
-                        wp8.className = `piece wp square-${b}`
+                        if(b%10 == 8)
+                        {
+                            div.removeChild(wp8)
+                            wq9.className = `piece wq square-${b}`
+                            wq9.style.display = "block";
+                            banco[a % 10][(a - a % 10) / 10 - 1 - 1] = 'wq'
+                        }
+                        else
+                        {
+                            wp8.className = `piece wp square-${b}`
+                        }
                         wwp8 = 2;
                         dichuyen()
                     }
@@ -6802,6 +7053,4238 @@ wq1.onclick = function () {
         temp = true;
     }
 }
+wq2.onclick = function () {
+    if (temp == true) {
+        wq2.style.backgroundColor = "#957373ad";
+        let nameClass = wq2.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq2.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq2.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq2.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq2.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq2.style.backgroundColor = "transparent";
+        let nameClass = wq2.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wq3.onclick = function () {
+    if (temp == true) {
+        wq3.style.backgroundColor = "#957373ad";
+        let nameClass = wq3.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq3.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq3.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq3.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq3.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq3.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq3.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq3.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq3.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq3.style.backgroundColor = "transparent";
+        let nameClass = wq3.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wq4.onclick = function () {
+    if (temp == true) {
+        wq4.style.backgroundColor = "#957373ad";
+        let nameClass = wq4.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq4.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq4.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq4.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq4.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq4.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq4.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq4.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq4.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq4.style.backgroundColor = "transparent";
+        let nameClass = wq4.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wq5.onclick = function () {
+    if (temp == true) {
+        wq5.style.backgroundColor = "#957373ad";
+        let nameClass = wq5.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq5.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq5.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq5.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq5.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq5.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq5.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq5.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq5.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq5.style.backgroundColor = "transparent";
+        let nameClass = wq5.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wq6.onclick = function () {
+    if (temp == true) {
+        wq6.style.backgroundColor = "#957373ad";
+        let nameClass = wq6.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq6.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq6.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq6.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq6.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq6.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq6.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq6.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq6.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq6.style.backgroundColor = "transparent";
+        let nameClass = wq6.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wq7.onclick = function () {
+    if (temp == true) {
+        wq7.style.backgroundColor = "#957373ad";
+        let nameClass = wq7.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq7.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq7.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq7.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq7.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq7.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq7.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq7.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq7.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq7.style.backgroundColor = "transparent";
+        let nameClass = wq7.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wq8.onclick = function () {
+    if (temp == true) {
+        wq8.style.backgroundColor = "#957373ad";
+        let nameClass = wq8.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq8.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq8.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq8.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq8.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq8.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq8.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq8.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq8.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq8.style.backgroundColor = "transparent";
+        let nameClass = wq8.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
+wq9.onclick = function () {
+    if (temp == true) {
+        wq9.style.backgroundColor = "#957373ad";
+        let nameClass = wq9.className.toString()
+        for (let i = 1; i < 8; i++)          //tren
+        {
+            if (kt(diachi(nameClass) + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i}`) == null) {
+                    tren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + tren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover1", `square-${diachi(nameClass) + tren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq9.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + tren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + tren][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + tren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //duoi
+        {
+            if (kt(diachi(nameClass) - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i}`) == null) {
+                    duoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - duoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-1", `square-${diachi(nameClass) - duoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - duoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - duoi][(a - a % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - duoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //trai
+        {
+            if (kt(diachi(nameClass) - i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10}`) == null) {
+                    trai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - trai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-10", `square-${diachi(nameClass) - trai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - trai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 - trai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - trai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phai
+        {
+            if (kt(diachi(nameClass) + i * 10) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10}`) == null) {
+                    phai++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phai * 10}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover10", `square-${diachi(nameClass) + phai * 10}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wr1.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaitren
+        {
+            if (kt(diachi(nameClass) + i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 + i}`) == null) {
+                    phaitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover11", `square-${diachi(nameClass) + phaitren * 10 + phaitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq9.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaitren * 10 + phaitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + phaitren][(a - a % 10) / 10 - 1 + phaitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaitren * 10 + phaitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //phaiduoi
+        {
+            if (kt(diachi(nameClass) + i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) + i * 10 - i}`) == null) {
+                    phaiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) + i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) + i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 + i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-9", `square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq9.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) + phaiduoi * 10 - phaiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - phaiduoi][(a - a % 10) / 10 - 1 + phaiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) + phaiduoi * 10 - phaiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traitren
+        {
+            if (kt(diachi(nameClass) - i * 10 + i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 + i}`) == null) {
+                    traitren++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 + i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 + i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 + i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover9", `square-${diachi(nameClass) - traitren * 10 + traitren}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq9.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traitren * 10 + traitren;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 + traitren][(a - a % 10) / 10 - 1 - traitren] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traitren * 10 + traitren}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+
+                    }
+                    break;
+                }
+            } else break
+        }
+        for (let i = 1; i < 8; i++)          //traiduoi
+        {
+            if (kt(diachi(nameClass) - i * 10 - i) == 1) {
+                if (document.querySelector(`.square-${diachi(nameClass) - i * 10 - i}`) == null) {
+                    traiduoi++;
+                    let taoDiv = document.createElement("div")
+                    taoDiv.classList.add("piece", "hover", `square-${diachi(nameClass) - i * 10 - i}`);
+                    taoDiv.style.backgroundColor = "#957373ad";
+                    taoDiv.onclick = function () {
+                        wq9.style.backgroundColor = "transparent";
+                        let b = diachi(nameClass) - i * 10 - i;
+                        let a = diachi(nameClass)
+                        banco[a % 10 - 1 - i][(a - a % 10) / 10 - 1 - i] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                        banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+
+                        xe(nameClass)
+                        tuong(nameClass)
+                        temp = true;
+                        tren = 1;
+                        duoi = 1;
+                        trai = 1;
+                        phai = 1;
+                        phaitren = 1;
+                        phaiduoi = 1;
+                        traitren = 1;
+                        traiduoi = 1;
+                        wq9.className = `piece wq square-${b}`
+                        dichuyen()
+                    }
+                    div.appendChild(taoDiv);
+                } else {
+                    if (anduoc(document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`).className.toString()) == 1) {
+                        let taoDiv = document.createElement("div")
+                        taoDiv.classList.add("piece", "hover-11", `square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`);
+                        taoDiv.style.backgroundColor = "#ff000080";
+                        taoDiv.onclick = function () {
+                            wq9.style.backgroundColor = "transparent";
+                            let b = diachi(nameClass) - traiduoi * 10 - traiduoi;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1 - traiduoi][(a - a % 10) / 10 - 1 - traiduoi] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
+                            xe(nameClass)
+                            tuong(nameClass)
+                            temp = true;
+                            let an = document.querySelector(`.square-${diachi(nameClass) - traiduoi * 10 - traiduoi}`)
+                            div.removeChild(an);
+                            tren = 1;
+                            duoi = 1;
+                            trai = 1;
+                            phai = 1;
+                            phaitren = 1;
+                            phaiduoi = 1;
+                            traitren = 1;
+                            traiduoi = 1;
+                            wq9.className = `piece wq square-${b}`
+                            dichuyen()
+                        }
+                        div.appendChild(taoDiv);
+                    }
+                    break;
+                }
+            } else break
+        }
+        temp = false;
+    } else {
+        wq9.style.backgroundColor = "transparent";
+        let nameClass = wq9.className.toString()
+        xe(nameClass)
+        tuong(nameClass)
+        tren = 1;
+        duoi = 1
+        trai = 1;
+        phai = 1;
+        phaitren = 1;
+        phaiduoi = 1;
+        traitren = 1;
+        traiduoi = 1;
+        temp = true;
+    }
+}
 //Di chuyen king 1
 wk1.onclick = function () {
     if (temp == true) {
@@ -8710,29 +13193,43 @@ wk1.onclick = function () {
     }
 }
 
-
-
-
-
-var ds = 1
+function ok()
+{
+    ds = document.querySelector('.textbox1').value
+    ds = (ds - '0') * 2;
+    console.log(ds)
+}
 function dichuyen() {
-    let xetvitri = dendc(ds*2).toString()
+    let xetvitri = dendc(ds).toString()
     console.log(xetvitri)
     console.log(banco)
     let dc = document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className.toString()
-    let dchi = ''
-    for (let i = 0; i < dc.length - 2; i++) {
-        dchi = dchi + dc[i]
+    if((kttot(dc) == 1)&&(xetvitri[2]) == 0)
+    {
+        if (document.querySelector(`.square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`) == null) {
+            document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className = `piece bq square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`
+        } else {
+            div.removeChild(document.querySelector(`.square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`))
+            document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className = `piece bq square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`
+        }
+        banco[xetvitri[2]-'0'][xetvitri[3]-'0'] = 'bq';
+        banco[xetvitri[0]-'0'][xetvitri[1]-'0'] = 0;
     }
-    dchi = dchi + (xetvitri[3] - '0' + 1).toString() + (xetvitri[2] - '0' + 1).toString()
-    if (document.querySelector(`.square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`) == null) {
-        document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className = dchi
-    } else {
-        div.removeChild(document.querySelector(`.square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`))
-        document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className = dchi
+    else {
+        let dchi = ''
+        for (let i = 0; i < dc.length - 2; i++) {
+            dchi = dchi + dc[i]
+        }
+        dchi = dchi + (xetvitri[3] - '0' + 1).toString() + (xetvitri[2] - '0' + 1).toString()
+        if (document.querySelector(`.square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`) == null) {
+            document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className = dchi
+        } else {
+            div.removeChild(document.querySelector(`.square-${xetvitri[3] - '0' + 1}${xetvitri[2] - '0' + 1}`))
+            document.querySelector(`.square-${xetvitri[1] - '0' + 1}${xetvitri[0] - '0' + 1}`).className = dchi
+        }
+        banco[xetvitri[2]-'0'][xetvitri[3]-'0'] = banco[xetvitri[0]-'0'][xetvitri[1]-'0']
+        banco[xetvitri[0]-'0'][xetvitri[1]-'0'] = 0;
     }
-    banco[xetvitri[2]-'0'][xetvitri[3]-'0'] = banco[xetvitri[0]-'0'][xetvitri[1]-'0']
-    banco[xetvitri[0]-'0'][xetvitri[1]-'0'] = 0;
 }
 
 
@@ -8741,6 +13238,17 @@ function diachi(x)    //hàm lấy tọa độ quân cờ
     let a
     a=x[x.length-2]+x[x.length-1]
     return a - '0'
+}
+function kttot(toado)  //kiểm tra tên class lấy đc có phải là cờ đen ko
+{
+    for(let i = 0; i < toado.length; i++)
+    {
+        if((toado[i]==' ')&&(toado[i+1]=='b')&&(toado[i+2]=='p'))
+        {
+            return 1;
+        }
+    }
+    return 0;
 }
 function anduoc(coden)  //kiểm tra tên class lấy đc có phải là cờ đen ko
 {
@@ -9037,55 +13545,117 @@ function dendc(dosau)      // hàm xét các nước di chuyển của cờ đen
                 } else {
                     if (kiemtra(i - 1, j) == 1) {
                         if (banco[i - 1][j] == 0) {
-                            banco[i - 1][j] = banco[i][j];
-                            banco[i][j] = 0;
-                            max1 = 0
-                            max1 = max1 + trangdc(dosau - 1)
-                            if(max < max1) {
-                                max = max1;
-                                A = i;
-                                B = j;
-                                C = i - 1;
-                                D = j;
+                            if(i-1 == 0)
+                            {
+                                let x = banco[i - 1][j]
+                                let y = banco[i][j]
+                                banco[i - 1][j] = 'bq';
+                                banco[i][j] = 0;
+                                max1 = 80
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i - 1;
+                                    D = j;
+                                }
+                                banco[i][j] = y;
+                                banco[i - 1][j] = x;
                             }
-                            banco[i][j] = banco[i - 1][j];
-                            banco[i - 1][j] = 0;
+                            else {
+                                banco[i - 1][j] = banco[i][j];
+                                banco[i][j] = 0;
+                                max1 = 0
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i - 1;
+                                    D = j;
+                                }
+                                banco[i][j] = banco[i - 1][j];
+                                banco[i - 1][j] = 0;
+                            }
+
                         }
                     }
                     if (kiemtra(i - 1, j - 1) == 1) {
                         if ((diemcong(i - 1, j - 1) == 10) || (diemcong(i - 1, j - 1) == 30) || (diemcong(i - 1, j - 1) == 50) || (diemcong(i - 1, j - 1) == 90) || (diemcong(i - 1, j - 1) == 900)) {
-                            max1 = diemcong(i - 1, j - 1)
-                            let x = banco[i - 1][j - 1]
-                            banco[i - 1][j - 1] = banco[i][j];
-                            banco[i][j] = 0;
-                            max1 = max1 + trangdc(dosau - 1)
-                            if(max < max1) {
-                                max = max1;
-                                A = i;
-                                B = j;
-                                C = i-1;
-                                D = j-1;
+                            if(i-1 == 0)
+                            {
+                                max1 = diemcong(i - 1, j - 1) + 80;
+                                let x = banco[i - 1][j - 1]
+                                let y = banco[i][j]
+                                banco[i - 1][j - 1] = 'bq';
+                                banco[i][j] = 0;
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i-1;
+                                    D = j-1;
+                                }
+                                banco[i][j] = y;
+                                banco[i - 1][j - 1] = x;
                             }
-                            banco[i][j] = banco[i - 1][j - 1];
-                            banco[i - 1][j - 1] = x;
+                            else
+                            {
+                                max1 = diemcong(i - 1, j - 1)
+                                let x = banco[i - 1][j - 1]
+                                banco[i - 1][j - 1] = banco[i][j];
+                                banco[i][j] = 0;
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i-1;
+                                    D = j-1;
+                                }
+                                banco[i][j] = banco[i - 1][j - 1];
+                                banco[i - 1][j - 1] = x;
+                            }
                         }
                     }
                     if (kiemtra(i - 1, j + 1) == 1) {
                         if ((diemcong(i - 1, j + 1) == 10) || (diemcong(i - 1, j + 1) == 30) || (diemcong(i - 1, j + 1) == 50) || (diemcong(i - 1, j + 1) == 90) || (diemcong(i - 1, j + 1) == 900)) {
-                            max1 = diemcong(i - 1, j + 1)
-                            let x = banco[i - 1][j + 1]
-                            banco[i - 1][j + 1] = banco[i][j];
-                            banco[i][j] = 0;
-                            max1 = max1 + trangdc(dosau - 1)
-                            if(max < max1) {
-                                max = max1;
-                                A = i;
-                                B = j;
-                                C = i - 1;
-                                D = j + 1;
+                            if(i-1 == 0)
+                            {
+                                max1 = diemcong(i - 1, j + 1) + 80
+                                let x = banco[i - 1][j + 1]
+                                let y = banco[i][j]
+                                banco[i - 1][j + 1] = 'bq';
+                                banco[i][j] = 0;
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i - 1;
+                                    D = j + 1;
+                                }
+                                banco[i][j] = y;
+                                banco[i - 1][j + 1] = x;
                             }
-                            banco[i][j] = banco[i - 1][j + 1];
-                            banco[i - 1][j + 1] = x;
+                            else {
+                                max1 = diemcong(i - 1, j + 1)
+                                let x = banco[i - 1][j + 1]
+                                banco[i - 1][j + 1] = banco[i][j];
+                                banco[i][j] = 0;
+                                max1 = max1 + trangdc(dosau - 1)
+                                if(max < max1) {
+                                    max = max1;
+                                    A = i;
+                                    B = j;
+                                    C = i - 1;
+                                    D = j + 1;
+                                }
+                                banco[i][j] = banco[i - 1][j + 1];
+                                banco[i - 1][j + 1] = x;
+                            }
                         }
                     }
                 }
@@ -10284,40 +14854,88 @@ function trangdc(dosau)
                     } else {
                         if (kiemtra(i + 1, j) == 1) {
                             if (banco[i + 1][j] == 0) {
-                                banco[i + 1][j] = banco[i][j];
-                                banco[i][j] = 0;
-                                min1 = 0
-                                if(min>min1){
-                                    min = min1
+                                if(i+1 == 7)
+                                {
+                                    let x = banco[i + 1][j];
+                                    let y = banco[i][j];
+                                    banco[i + 1][j] = 'wq';
+                                    banco[i][j] = 0;
+                                    min1 = -80
+                                    if(min>min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = y;
+                                    banco[i + 1][j] = x;
                                 }
-                                banco[i][j] = banco[i + 1][j];
-                                banco[i + 1][j] = 0;
+                                else {
+                                    banco[i + 1][j] = banco[i][j];
+                                    banco[i][j] = 0;
+                                    min1 = 0
+                                    if(min>min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = banco[i + 1][j];
+                                    banco[i + 1][j] = 0;
+                                }
+
                             }
                         }
                         if (kiemtra(i + 1, j - 1) == 1) {
                             if ((diemtru(i + 1, j - 1) == -10) || (diemtru(i + 1, j - 1) == -30) || (diemtru(i + 1, j - 1) == -50) || (diemtru(i + 1, j - 1) == -90) || (diemtru(i + 1, j - 1) == -900)) {
-                                min1 = diemtru(i + 1, j - 1)
-                                let x = banco[i + 1][j - 1]
-                                banco[i + 1][j - 1] = banco[i][j];
-                                banco[i][j] = 0;
-                                if(min>min1){
-                                    min = min1
+                                if(i+1 == 7)
+                                {
+                                    min1 = diemtru(i + 1, j - 1) - 80
+                                    let x = banco[i + 1][j - 1]
+                                    let y = banco[i][j]
+                                    banco[i + 1][j - 1] = 'wq';
+                                    banco[i][j] = 0;
+                                    if(min>min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = y;
+                                    banco[i + 1][j - 1] = x;
                                 }
-                                banco[i][j] = banco[i + 1][j - 1];
-                                banco[i + 1][j - 1] = x;
+                                else {
+                                    min1 = diemtru(i + 1, j - 1)
+                                    let x = banco[i + 1][j - 1]
+                                    banco[i + 1][j - 1] = banco[i][j];
+                                    banco[i][j] = 0;
+                                    if(min>min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = banco[i + 1][j - 1];
+                                    banco[i + 1][j - 1] = x;
+                                }
+
                             }
                         }
                         if (kiemtra(i + 1, j + 1) == 1) {
                             if ((diemtru(i + 1, j + 1) == -10) || (diemtru(i + 1, j + 1) == -30) || (diemtru(i + 1, j + 1) == -50) || (diemtru(i + 1, j + 1) == -90) || (diemtru(i + 1, j + 1) == -900)) {
-                                min1 = diemtru(i + 1, j + 1)
-                                let x = banco[i + 1][j + 1]
-                                banco[i + 1][j + 1] = banco[i][j];
-                                banco[i][j] = 0;
-                                if(min>min1){
-                                    min = min1
+                                if(i+1 == 7)
+                                {
+                                    min1 = diemtru(i + 1, j + 1) - 80
+                                    let x = banco[i + 1][j + 1]
+                                    let y = banco[i][j]
+                                    banco[i + 1][j + 1] = 'wq';
+                                    banco[i][j] = 0;
+                                    if(min>min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = y;
+                                    banco[i + 1][j + 1] = x;
                                 }
-                                banco[i][j] = banco[i + 1][j + 1];
-                                banco[i + 1][j + 1] = x;
+                                else {
+                                    min1 = diemtru(i + 1, j + 1)
+                                    let x = banco[i + 1][j + 1]
+                                    banco[i + 1][j + 1] = banco[i][j];
+                                    banco[i][j] = 0;
+                                    if(min>min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = banco[i + 1][j + 1];
+                                    banco[i + 1][j + 1] = x;
+                                }
+
                             }
                         }
                     }
@@ -11235,43 +15853,93 @@ function trangdc(dosau)
                     } else {
                         if (kiemtra(i + 1, j) == 1) {
                             if (banco[i + 1][j] == 0) {
-                                banco[i + 1][j] = banco[i][j];
-                                banco[i][j] = 0;
-                                min1 = 0
-                                min1 = min1 + dendc(dosau-1)
-                                if(min > min1){
-                                    min = min1
+                                if(i+1 == 7)
+                                {
+                                    let x = banco[i + 1][j]
+                                    let y = banco[i][j]
+                                    banco[i + 1][j] = 'wq';
+                                    banco[i][j] = 0;
+                                    min1 = -80
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min>min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = y;
+                                    banco[i + 1][j] = x;
                                 }
-                                banco[i][j] = banco[i + 1][j];
-                                banco[i + 1][j] = 0;
+                                else
+                                {
+                                    banco[i + 1][j] = banco[i][j];
+                                    banco[i][j] = 0;
+                                    min1 = 0
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = banco[i + 1][j];
+                                    banco[i + 1][j] = 0;
+                                }
+
                             }
                         }
                         if (kiemtra(i + 1, j - 1) == 1) {
                             if ((diemtru(i + 1, j - 1) == -10) || (diemtru(i + 1, j - 1) == -30) || (diemtru(i + 1, j - 1) == -50) || (diemtru(i + 1, j - 1) == -90) || (diemtru(i + 1, j - 1) == -900)) {
-                                min1 = diemtru(i + 1, j - 1)
-                                let x = banco[i + 1][j - 1]
-                                banco[i + 1][j - 1] = banco[i][j];
-                                banco[i][j] = 0;
-                                min1 = min1 + dendc(dosau-1)
-                                if(min > min1){
-                                    min = min1
+                                if(i+1 == 7){
+                                    min1 = diemtru(i + 1, j - 1) - 80
+                                    let x = banco[i + 1][j - 1]
+                                    let y = banco[i][j]
+                                    banco[i + 1][j - 1] = 'wq';
+                                    banco[i][j] = 0;
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = y;
+                                    banco[i + 1][j - 1] = x;
                                 }
-                                banco[i][j] = banco[i + 1][j - 1];
-                                banco[i + 1][j - 1] = x;
+                                else {
+                                    min1 = diemtru(i + 1, j - 1)
+                                    let x = banco[i + 1][j - 1]
+                                    banco[i + 1][j - 1] = banco[i][j];
+                                    banco[i][j] = 0;
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = banco[i + 1][j - 1];
+                                    banco[i + 1][j - 1] = x;
+                                }
+
                             }
                         }
                         if (kiemtra(i + 1, j + 1) == 1) {
                             if ((diemtru(i + 1, j + 1) == -10) || (diemtru(i + 1, j + 1) == -30) || (diemtru(i + 1, j + 1) == -50) || (diemtru(i + 1, j + 1) == -90) || (diemtru(i + 1, j + 1) == -900)) {
-                                min1 = diemtru(i + 1, j + 1)
-                                let x = banco[i + 1][j + 1]
-                                banco[i + 1][j + 1] = banco[i][j];
-                                banco[i][j] = 0;
-                                min1 = min1 + dendc(dosau-1)
-                                if(min > min1){
-                                    min = min1
+                                if(i+1 == 7)
+                                {
+                                    min1 = diemtru(i + 1, j + 1) - 80
+                                    let x = banco[i + 1][j + 1]
+                                    let y = banco[i][j]
+                                    banco[i + 1][j + 1] = 'wq';
+                                    banco[i][j] = 0;
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = y;
+                                    banco[i + 1][j + 1] = x;
                                 }
-                                banco[i][j] = banco[i + 1][j + 1];
-                                banco[i + 1][j + 1] = x;
+                                else {
+                                    min1 = diemtru(i + 1, j + 1)
+                                    let x = banco[i + 1][j + 1]
+                                    banco[i + 1][j + 1] = banco[i][j];
+                                    banco[i][j] = 0;
+                                    min1 = min1 + dendc(dosau-1)
+                                    if(min > min1){
+                                        min = min1
+                                    }
+                                    banco[i][j] = banco[i + 1][j + 1];
+                                    banco[i + 1][j + 1] = x;
+                                }
                             }
                         }
                     }
