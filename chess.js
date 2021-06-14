@@ -6161,6 +6161,11 @@ function ok()
     console.log(ds)
 }
 function dichuyen() {
+    if(endgame()==0)
+    {
+        alert("You Win")
+        location.reload();
+    }
     let xetvitri = dendc(ds).toString()
     console.log(xetvitri)
     console.log(banco)
@@ -6190,6 +6195,11 @@ function dichuyen() {
         }
         banco[xetvitri[2]-'0'][xetvitri[3]-'0'] = banco[xetvitri[0]-'0'][xetvitri[1]-'0']
         banco[xetvitri[0]-'0'][xetvitri[1]-'0'] = 0;
+    }
+    if(endgame()==0)
+    {
+        alert("You Lose")
+        location.reload();
     }
 }
 
@@ -9706,7 +9716,5 @@ function trangdc(dosau)
     }
     return min
 }
-
-
 
 

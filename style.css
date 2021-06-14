@@ -1,10 +1,3 @@
-/*
-.dark{
-    fill: #779952;
-}
-.light{
-    fill: #edeed1
-}*/
 .banCo{
     background-image: url("https://images.chesscomfiles.com/chess-themes/boards/green/150.png");
     background-size: 720px;
@@ -370,3 +363,4 @@
 .color {
     background-color: #ffff00;
 }
+
