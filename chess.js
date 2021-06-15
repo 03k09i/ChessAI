@@ -1006,7 +1006,6 @@ wr1.onclick = function () {
                         let b = diachi(nameClass) + i;
                         let a = diachi(nameClass)
                         banco[b % 10 - 1][(b - b % 10) / 10 - 1] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
-                        console.log(banco)
                         banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
                         xoadiv();
                         temp = true;
@@ -1157,6 +1156,9 @@ wr1.onclick = function () {
                         taoDiv.onclick = function () {
                             wr1.style.backgroundColor = "transparent";
                             let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
                             temp = true;
                             let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
                             div.removeChild(an);
@@ -1343,6 +1345,9 @@ wr2.onclick = function () {
                         taoDiv.onclick = function () {
                             wr2.style.backgroundColor = "transparent";
                             let b = diachi(nameClass) + phai * 10;
+                            let a = diachi(nameClass)
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1 + phai] = banco[a % 10 - 1][(a - a % 10) / 10 - 1];
+                            banco[a % 10 - 1][(a - a % 10) / 10 - 1] = 0;
                             temp = true;
                             let an = document.querySelector(`.square-${diachi(nameClass) + phai * 10}`)
                             div.removeChild(an);
